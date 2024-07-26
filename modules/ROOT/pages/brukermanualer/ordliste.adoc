@@ -1,0 +1,8 @@
+== Ordliste
+
+Felles ordliste som benyttes
+
+1. PLS
+1. SD-anlegg
+1. IPC
+

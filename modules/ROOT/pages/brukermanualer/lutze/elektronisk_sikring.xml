@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?asciidoc-toc maxdepth="5"?>
+<?asciidoc-numbered?>
+<article xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" version="5.0" xml:lang="en">
+<info>
+<title>Elektroniske sikringer</title>
+<date>2024-07-17</date>
+</info>
+<section xml:id="_lysindikering">
+<title>Lysindikering</title>
+<informaltable frame="all" rowsep="1" colsep="1">
+<tgroup cols="3">
+<colspec colname="col_1" colwidth="33.3333*"/>
+<colspec colname="col_2" colwidth="33.3333*"/>
+<colspec colname="col_3" colwidth="33.3334*"/>
+<tbody>
+<row>
+<entry align="left" valign="top"><simpara>Lysindikering</simpara></entry>
+<entry align="left" valign="top"><simpara>Utgang</simpara></entry>
+<entry align="left" valign="top"><simpara>Beskrivelse</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>Grønt lys</simpara></entry>
+<entry align="left" valign="top"><simpara>PÅ</simpara></entry>
+<entry align="left" valign="top"><simpara>Alt OK (1)</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>Grønt lys blinker 1Hz</simpara></entry>
+<entry align="left" valign="top"><simpara>Overlast</simpara></entry>
+<entry align="left" valign="top"><simpara>Last over 90% av In</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>Grønt lys blinker 5Hz</simpara></entry>
+<entry align="left" valign="top"><simpara>Overlast</simpara></entry>
+<entry align="left" valign="top"><simpara>Last over 100% av In</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"></entry>
+<entry align="left" valign="top"></entry>
+<entry align="left" valign="top"></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>Rødt lys</simpara></entry>
+<entry align="left" valign="top"><simpara>AV</simpara></entry>
+<entry align="left" valign="top"><simpara>Utgang slått av eller kvittert (1)</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>Rødt lys blinker 1Hz</simpara></entry>
+<entry align="left" valign="top"><simpara>Overlast</simpara></entry>
+<entry align="left" valign="top"><simpara>Utgang av grunnet overlast eller kortslutning</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>Rødt lys blinker 5Hz</simpara></entry>
+<entry align="left" valign="top"><simpara>Error</simpara></entry>
+<entry align="left" valign="top"><simpara>Koblingsfeil / intern feil</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>Rødt lys blinker sakte</simpara></entry>
+<entry align="left" valign="top"><simpara>AV</simpara></entry>
+<entry align="left" valign="top"><simpara>Utgang avslått fra ekstern set/reset knapp</simpara></entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable>
+<literallayout class="monospaced">.1 Hvis driftsspenningen blir slått av, lagres den siste statusen (Standard).</literallayout>
+</section>
+<section xml:id="_betjening">
+<title>Betjening</title>
+<informalfigure>
+<mediaobject>
+<imageobject>
+<imagedata fileref="./images/elektronisk_sikring_01.png"/>
+</imageobject>
+<textobject><phrase>elektronisk sikring 01</phrase></textobject>
+</mediaobject>
+</informalfigure>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Vrihjul for justering av strøm *</simpara>
+</listitem>
+<listitem>
+<simpara>Vrihjul for justering av karakterestikk *</simpara>
+</listitem>
+<listitem>
+<simpara>LED</simpara>
+</listitem>
+<listitem>
+<simpara>Bryter for AV/PÅ **</simpara>
+</listitem>
+<listitem>
+<simpara>Klikk på merkeholder</simpara>
+<itemizedlist>
+<listitem>
+<simpara>*Avhenger av produkttype. Innstillinger lagres ved å slå sikring igjen via bryter (4) og ikke via inngang for SET/RESET</simpara>
+</listitem>
+<listitem>
+<simpara>** Dersom du slår av sikring kan du kun slå på sikring igjen ved å benytte bryter og inn inngang for SET/RESET</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+</orderedlist>
+</section>
+<section xml:id="_justering_av_strøm">
+<title>Justering av strøm</title>
+<literallayout class="monospaced">**Vrihjul for strøm**</literallayout>
+<literallayout class="monospaced">Strømmen kan innstilles fra 0,2 til 2 A i 200 mA trinn for 0.2 - 2A brytere</literallayout>
+<literallayout class="monospaced">For 1-10A brytere justeres dem i 1A trinn.</literallayout>
+<literallayout class="monospaced">**Vrihjul for karakterestikk**</literallayout>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Rask</simpara>
+</listitem>
+<listitem>
+<simpara>Normal</simpara>
+</listitem>
+<listitem>
+<simpara>Treg-1</simpara>
+</listitem>
+<listitem>
+<simpara>Treg-2</simpara>
+</listitem>
+<listitem>
+<simpara>Treg-3</simpara>
+<literallayout class="monospaced">Se brukermanual for kurver.</literallayout>
+</listitem>
+</orderedlist>
+</section>
+<section xml:id="_signalutgang">
+<title>Signalutgang</title>
+<simpara>Signalutgangen er av open collector typen med Pull-up motstand. Med denne teknikken kan man bygge sammen grupper og få alarme om en sikring i gruppen løser ut. Avhengig av den ytre lastresistansenkan utspenningen ved ikke utløst sikring variere.</simpara>
+<informalfigure>
+<mediaobject>
+<imageobject>
+<imagedata fileref="./images/elektronisk_sikring_05.jpg" contentwidth="400"/>
+</imageobject>
+<textobject><phrase>elektronisk sikring 05</phrase></textobject>
+</mediaobject>
+</informalfigure>
+<simpara><emphasis role="strong">24 Kobling med rele</emphasis><?asciidoc-br?></simpara>
+<informalfigure>
+<mediaobject>
+<imageobject>
+<imagedata fileref="./images/elektronisk_sikring_02.jpg" contentwidth="400"/>
+</imageobject>
+<textobject><phrase>elektronisk sikring 02</phrase></textobject>
+</mediaobject>
+</informalfigure>
+<simpara>Med en reléspole som ofte er lavohmig skal tilkobles direkte til alarmutgangen skal +24 V DC kobles direkte til reléet, minus skal kobles til alarmutgangen. OBS! Man får invertert funksjon, når sikringen ikke signaliserer feil er reléet ikke påvirket, ved feil aktiveres reléet. Benytt f.eks 760020.1000,</simpara>
+<simpara><emphasis role="strong">Sikring mot PLS inngang</emphasis></simpara>
+<informalfigure>
+<mediaobject>
+<imageobject>
+<imagedata fileref="./images/elektronisk_sikring_03.jpg" contentwidth="400"/>
+</imageobject>
+<textobject><phrase>elektronisk sikring 03</phrase></textobject>
+</mediaobject>
+</informalfigure>
+<simpara>10 stk sikringer er koblet. sammen i en gruppe med en feller alarmutgang til en PLS inngang på 10kΩ. Utsignalet på alarmutgangen ved driftstatus er 23,5 V DC. Alarmutgangens interne resistans er 2,1 kΩ. 2,1 kΩ/10=210 Ω. Re/ Rtot*U = 10 kΩ/10,21 kΩ*24=23,5 V DC.</simpara>
+<simpara><emphasis role="strong">Enkelt sikring</emphasis></simpara>
+<informalfigure>
+<mediaobject>
+<imageobject>
+<imagedata fileref="./images/elektronisk_sikring_04.jpg" contentwidth="400"/>
+</imageobject>
+<textobject><phrase>elektronisk sikring 04</phrase></textobject>
+</mediaobject>
+</informalfigure>
+<simpara>Eks 1. Kun 1 stk sikring benyttes, alarmutgangen er koblet til en PLS inngang på 10 kΩ. Utsignalet på alarmutgnagen ved driftstatus er 19,8 V DC. Alarmutgangens interne resistans er 2,1 kΩ. Re/ Rtot*U= 10 kΩ/12,1 kΩ*24=19,8 V).</simpara>
+</section>
+</article>

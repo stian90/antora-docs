@@ -1,0 +1,13 @@
+== dokumentasjon anlegg
+
+For å kunne lage felles dokumentasjon av anlegg er det viktig at noen regler blir fulgt. 
+
+1. Alle anlegg skal lagres med en `book.adoc` fil i roten av mappen. Eksempelvis `./Anlegg/Salmon_Evolution//Indre_haroy/book.adoc` 
+
+Dette for at script for å lage automatisk pdf/html dokumentasjon skal fungere
+
+2. mappestrukturen under `anlegg` skal følges med henholdsvis først
+ - Kunde, altså hovedkunde som Salmon Evolution, Elkem, Widerøe
+ - Anlegg altså et spesifiks anlegg for kunden. 
+
+ NB: Noen anlegg har bare 1 anlegg, men det skal likevel følge mappestrukturen. 

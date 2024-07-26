@@ -1,0 +1,29 @@
+= Dokumentasjon SD-anlegg :: Salmon Evolution 
+:doctype: book
+:toc: left
+:toc-title: Innholdsfortegnelse
+:icons: font
+:toclevels: 3
+:document-name: Brukermanual SD-anlegg
+:chapter-signifier: 
+:sectlinks:
+:sectanchors:
+:revdate:
+
+:numbered:
+
+include::../../../brukermanualer/ordliste.adoc[]
+
+include::intro.adoc[]
+
+== tittel 3 
+ her kommer ny info
+
+//include::Beckhoff/1-installering.adoc[]
+
+//https://github.com/ggrossetie/asciidoctor-web-pdf#readme
+
+// Tips og triks 
+// https://engineering.dena.com/blog/2023/05/generating-pdf-documents-from-asciidoc/
+// https://www.wimdeblauwe.com/blog/2019/2019-12-20-customization-of-asciidoctor-pdf-output/
+

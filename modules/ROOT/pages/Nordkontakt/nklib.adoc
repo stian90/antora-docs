@@ -1,0 +1,77 @@
+Velkommen til Nordkontakts wiki for Beckhoff PLS Programmering. Denne
+guiden er ment for utvikling, design av samt feilsøking på systemer hvor
+Beckhoff PLS er brukt.
+
+== Formål
+
+Formålet er å standardisere programmering på tvers av våre
+Beckhoff-prosjekter ved å flytte oppmerksomheten mot anleggsspesifikk
+logikk. Vi sikter på å redusere tiden brukt på instansiering og oppsett
+av komponenter og feltutstyr. Gjennom bruk av dette biblioteket og den
+tilhørende veiledningen, vil oppsettet av feltutstyr i prosjekter bli
+mer effektivt, slik at utviklere kan konsentrere seg om å skape ryddig
+og utvidbar kode som er enklere å feilsøke.
+
+Vi ønsker å maksimere muligheten for feilsøkingen gjennom toppsystemet.
+Dette oppnås ved å gjøre relevante feiltilstander, oppsettsparametre og
+innstillinger tilgjengelige og justerbare fra toppsystemet.
+
+== Scope
+
+Wikien dekker forskjellige aspekter ved hvordan våre programmer skal
+struktureres, programmeres, navnekonvensjon, og best practices.
+
+== Start her
+. xref:nklib/NamingConvention.adoc[Navnekonvensjon]
+. xref:nklib/OOP.adoc[OOP- Objektorientert programmering]
+. xref:nklib/Structure.adoc[Programstruktur]
+. Viktige funksjonsblokker
+* xref:nklib/fbEu.adoc[fbEu]
+* xref:nklib/fbAlarm.adoc[fbAlarm]
+* xref:nklib/fbSumAlarm.adoc[fbSumAlarm]
+* xref:nklib/fbAlarmGroup.adoc[fbAlarmGroup]
+. Eksempel
+* xref:nklib/Tankregulering.adoc[Tankregulering]
+* xref:nklib/Trafikklys.adoc[Trafikklys]
+. xref:nklib/Extends.adoc[Extends]
+. *Utforsk nklib*
+
+== Innhold
+
+Wikien har en sidemeny med innholdet. Her er de forskjellige
+funksjonsblokkene og eksemplene sortert inn i kategorier.
+
+* *Start her*: Det som er viktig at du leser igjennom før du tar
+biblioteket i bruk.
+* *Eksempel*: Programmeringseksempel. Hvordan de forskjellige
+komponentene bør/kan kobles sammen og styres.
+* *Alarm*: Funksjonsblokker for å håndtere alarmer. Alle alarmer som
+skal i en alarmliste skal bruke `+fbAlarm+`.
+* *Analog*: Funksjonsblokker for å håndtere analoge inn og utganger.
+Skal brukes for *alle* analoge inn og utganger. Disse lar og kontrollere
+skalering/filtrering samt force verdier fra toppsystemet.
+* *Digital*: Funksjonsblokker for å håndtere digitale inn og utganger.
+Skal bruke for *alle* digitale inn og utganger. Disse lar oss
+kontrollere filtreringen og inverteringen samt force verdi fra
+toppsystemet.
+* *Motor og frekvensomformere*: Inneholder grunnblokk for motor
+`+fbMotor+`. Denne skal brukes til *alle* motorer som skal inn i
+toppsystemet. Denne inneholder alt som trengs for å kontrollere en motor
+eller frekvensomformer fra ett brukergrensesnitt.
+* *Regulering*: Inneholder våre regulatorer.
+* *Ventiler*: Inneholder våre ventiler
+* *Utilities*: Små og store funksjoner som kan brukes som en del av en
+større funksjon.
+
+== Installasjon av biblioteket
+
+. Last ned siste versjon fra
+https://github.com/nordkontakt/nklib/releases[Releases]
+. Åpne `+TwinCat XAE+`
+. I topplinjen, velg `+PLC -> Library Repository..+`
+. Trykk på "`Install`" og velg den kompilerte filen du har lastet ned.
+. I prosjektet ditt, høyreklikk på `+References+` og trykk på
+`+Add library.+` Velg så
+`+(Miscellaneous)/Nordkontakt Komponentbibliotek+`.
+. Sørg for at du har aktivert `+qualified access+` for `+nklib+`.
+. *_Lås versjon!_*

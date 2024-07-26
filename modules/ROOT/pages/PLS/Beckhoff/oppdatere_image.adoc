@@ -1,0 +1,48 @@
+---
+title: Oppdatere image på CE
+description: 
+published: true
+date: 2024-03-05T19:09:28.318Z
+tags: beckhoff
+editor: markdown
+dateCreated: 2024-03-04T19:44:11.201Z
+---
+
+# Prosedyre for oppdatering av image på Beckhoff PLSer.
+
+Eldre versjoner finnes her: [https://download.beckhoff.com/download/Software/embPC-Control/CX90xx/CX9020/CE/TC3/_History](/https://download.beckhoff.com/download/Software/embPC-Control/CX90xx/CX9020/CE/TC3/_History)
+
+1. Skru av PLS og Napp ut SD-kort.
+
+2. SD-kort settes inn i din PC
+
+3. Gå til https://download.beckhoff.com/download/software/embPC-Control/ Og last ned image til din PLS. 
+Eksempel for CP6606:
+https://download.beckhoff.com/download/software/embPC-Control/CX90xx/CX9020/CE/TC3/_History/CX9020_CB3011_WEC7_HPS_v608l_TC31_B4024.17.zip
+
+4. Ta backup av alt innhold på din PLS, selv om det er første gangs oppsett. Eventuelle lisenser som er lagt inn av Beckhoff kopieres over i senere steg.
+
+5. Etter du har tatt backup av innholdet på PLSens SD-kort sletter du innholdet inkludert alle systemfiler som Windows spør om du vil slette.
+
+6. Kopier alt innhold fra nedlastinger i punkt 3 over på SD-kortet
+![oppdatere_image_pa_ce_1.png](/img/beckhoff/oppdatere_image_pa_ce_1.png)
+
+7. Gå i mappen `RegFiles` og slett filen `CeRemoteDisplay_Disable.reg`. Dette aktiverer cerhost. (kan også gjøres i vanlig setup senere)
+
+8. Gå i mappen `RegFiles/Samples/CX9020` og kopier filen `FEC1_IP_Address.reg` (Denne heter sikkert noe annet om du har en annen FEC) limes inn i mappen «RegFiles». Her kan du sette IP-adressen til PLSen.
+
+![oppdatere_image_pa_ce_2.png](/img/beckhoff/oppdatere_image_pa_ce_2.png)
+
+9. Om dette ikke er første gangs oppsett av PLSen så har du alle lisensene dine liggende i mappen «TwinCAT\3.1\Target\License» i din sikkerhetskopi. Disse kopieres til samme mappe på SD-kortet.
+
+10. Dersom dette er en kjørende PLS må du også kopiere over persistent minne. Info om hvordan dette gjøres må legges inn her...
+
+11. Hvis du har OPC UA server eller klient på PLSen så går du på din lokale disk der du har twincat installert i mappen `C:\TwinCAT\Functions\TF6100-OPC-UA\CE-ARMV4I`.
+
+12. Kopier `.CAB` filene over på SD-kortet. Eksempelvis kan du legge disse i «TwinCat» mappen. Det har ikke noe å si da den forsvinner etter installasjon. (Installasjon av OPC UA Server/Client må gjøres vha. cerhost når PLSen er oppe)
+
+13. Stapp tilbake minnekortet og skru på PLSen.
+
+14. Du må lage ny route til PLSen for å få kontakt
+
+15. Du må aktivere config om du hadde noe på PLSen fra før.

@@ -1,0 +1,132 @@
+== NS 3456
+
+:toc:
+
+Plan og bygningen lovens § 21-10 (Sluttkontroll og ferdigattest) sier følgende om FDV-
+dokumentasjon:
+«Ved ferdigattest skal det fra tiltakshavers eller de ansvarlige foretaks side foreligge tilstrekkelig
+dokumentasjon over byggverkets, herunder byggeproduktenes, egenskaper som grunnlag for
+forvaltning, drift og vedlikehold av bygget. Departementet kan gi forskrift om innhold, avlevering og
+oppbevaring av slik dokumentasjon».
+
+NS3456 er en standard for innhenting av FDV dokumentasjon (Forvaltning, drift og vedlikehold) 
+
+Rollene som er oppgitt i NS3456 er **eier, driftsansvarlige/driftsoperatører** og **brukere**
+
+1. Brukerne av bygget kan organiseres etter **NS 3454** 
+1. Driftsoperatører organisert etter **NS 3451**
+1. Prosjektdokumentasjon, organisert etter **NS 3450**. Dette er beregnet for planleggere og utførende som skal endre byggverket. 
+
+**NS 3450 ** beskriver konkuransegrunnlag for bygg og anlegg.
+
+**NS3454:2013** beskriver behovene til bruker og
+
+**NS3450:2014** stiller krav til prosjektdokumenter som eier har behov for
+
++
++
+
+=== Brukere / NS 3454
+__«en organisasjon som benytter seg av byggverket for å utføre sitt vanlige virke».__
+
+Den del av FDV-dokumentasjonen er ment til/beregnet for de som bruker bygget og holde FDV-
+dokumentasjonen orientert til dem. Brukerne kan være variert basert på bygnings type eksempelvis skole, sykehus og bolig eller bibliotek. For klassifisering av bygg, skal brukes NS 3457:2013.
+
+Under denen delen skal det være informasjon som er viktig for den daglige bruken av byggverket. 
+
+=== Driftsoperatører / NS 3451 
+__«organisasjon eller person med ansvar for drift av et byggverk».__
+I denne delen legges dokumentasjon for vedlikehold av bygget/installasjonen
+
+* Beskrivelse om hva som skal kontrolleres.
+* Tidsintervaller for kontroll og ettersyn.
+* Hvordan kontrollen skal utføre.
+* Hvilken FDVU- tiltak skal fullføres med behovet for tiltak.
+* Informasjon om byggets materialer.
+* Tegninger som viser nødvendige plassering av funksjoner, for eksempel rømningsveier.
+
+=== Prosjektdokumenter/sluttdokumentasjon
+
+I denne del av FDV-dokumentasjon ligger tre hoved inndelinger
+
+1. orientere del
+1. beskrivende del
+1. informasjon om material og produkter.
+
+=== Dokumenttyper
+
+1. FDV instruksjon
+1. Funksjonsbeskrivelse
+1. Produktbeskrivelse
+1. Utstyrsliste
+1. Systembeskrivelse
+1. HMS
+1. Tegning / skjema
+1. Idriftsettelsesrapport
+1. Vedlikeholdsrutiner
+1. Beregning
+
+
+
+
+==== Orienteredel
+Informasjon om bygnings adresse, tomt og så videre.
+
+==== Beskrivende del
+informasjon om funksjons beskrivelse, beskrivelser etter NS 3420 eller tilsvarende,
+tegninger og tegning lister, beregninger og så videre.
+
+==== Material og produkt
+Informasjon om produktbeskrivelse, anvisninger for drift og vedlikehold,
+driftstekniske og så videre.
+
+=== Forvaltning / eier
+Eksempler på dokumentasjon er tegninger, oversiktstegninger
+
+=== Drift / driftsansvarlig/driftsoperatør
+Brukermanual SD-anlegg
+
+=== Vedlikehold / Brukere
+Vedlikeholdsmanual styretavler, rengjøringsintervall, feilsøking kort, utstyr.
+
+* Funksjonskontroll
+* Renholdsinstrukser
+* Driftsinstrukser
+* innstillingsverdier for de tekniske installasjonene (vern)
+* instrukser som angir funksjoner,feilindikering og feilsøking
+* instrukser for forebyggende og opprettende vedlikehold
+* leverandør- og serviceoversikt
+
++ 
++ 
+=== Krav iht. TEK-17
+I følge TEK 17-4 første veiledning, skal foreligge følgende FDV-dokumentasjon med overlevering av
+byggverket/ferdigstillelse:
+
+1. Miljødokumentasjon som miljøoppfølgingsplaner (forprosjekt)
+2. Brannkonsept
+3. Fasadetegninger
+4. Plantegninger
+5. Representative snitt
+6. Bebyggelsesplan med veier, parkering, beplantning, utendørs VVS-ledninger, el-ledningsplan
+7. Statiske beregninger og tegninger av bærende bygningsdeler
+8. Energiberegninger
+9. Branntekniske tegninger/planer
+10. Arbeidstegninger
+11. Produktblader
+12. Serviceavtaler
+13. Grunndata
+14. Offentlige dokumenter, brukstillatelser, målebrev, tillatelser, ferdigattest, sluttført
+gjennomføringsplan
+15. Plan med planbestemmelser
+
+I følge TEK 17 § 4-1 (veiledning til første ledd), skal det følgende dokumentene overleveres for **bolig
+bygg**:
+
+1. bygningsmessige produkter
+2. sanitæranlegg
+3. varmeanlegg
+4. ventilasjonsanlegg
+5. elektriske anlegg
+6. brannalarm- og slokkeanlegg
+

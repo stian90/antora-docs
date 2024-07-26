@@ -1,0 +1,52 @@
+== Markeringsspråk
+Nordkontakt benytter Asciidoc som markeringsspråk i dokumentasjon
+
+== Eksport til pdf
+
+=== Docker 
+[source,console]
+---
+docker run --rm \
+-v ./:/document madduci/docker-asciidoctor-pdf \
+-a pdf-themesdir=theme -a pdf-theme=nk \
+-a pdf-fontsdir=fonts \
+-a pdf-fontsdir=/document/resources/fonts /document/book.adoc
+---
+
+=== Ved asciidoctor installert
+
+[source,console]
+---
+  asciidoctor -r asciidoctor-pdf -b pdf \
+  -a pdf-theme=nk \
+  -a pdf-themesdir=theme \
+  -o book.pdf book.adoc
+---
+
+== Eksport til html
+
+
+== Oppsett av dokumentasjon
+Hvert anlegg må ha en ´book.adoc´ fil som forteller oppsett, og sider som skal være med i dokumentasjonen. 
+
+Eksempel nedenfor 
+
+[source, asciidoc]
+---
+= Dokumentasjon SD-anlegg :: Aguagen
+:doctype: book
+:toc: left
+:toc-title: Innholdsfortegnelse
+:icons: font
+:toclevels: 3
+:document-name: Brukermanual SD-anlegg
+:chapter-signifier: 
+:sectlinks:
+:sectanchors:
+
+:numbered:
+
+include::Beckhoff/2_nytt_prosjekt.adoc[]
+
+include::Beckhoff/1-installering.adoc[]
+---

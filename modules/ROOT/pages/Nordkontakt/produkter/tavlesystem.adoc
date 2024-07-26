@@ -1,0 +1,35 @@
+:toc:
+== Tavlesystem
+
+[cols="2,2" width=100%]
+|===
+|**Materielltype**
+|**Leverandør**
+
+| Effektbrytere
+| ABB +
+
+|Tavlesystem
+|Eldon +
+ABB +
+Finelcomp E-serie, IP2x +
+Legrand +
+
+|Styrestrømstrafo
+|https://www.seko-elektroteknikk.no/ +
+Noratel +
+
+|Skinnesystemer
+| Legrand +
+ +
+
+|Kabelgjennomføringer
+|https://www.icotek.com/en/products/hygienic-design-cable-entry-plates +
+https://www.primatec.no/index.php?route=product/category&path=18_204 norsk leverandør
++ 
+|===
+
+
+== Andre verkøy
+
+https://www.weidmueller.com/int/solutions/solutions/weidmueller_configurator/index.jsp[Weidmuller configurator] lage rekkeklemmer og bestille direkte. 

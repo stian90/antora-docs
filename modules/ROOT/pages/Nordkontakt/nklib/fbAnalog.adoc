@@ -1,0 +1,184 @@
+= Analoginngang
+
+Extends av xref:fbEu.adoc[fbEu].
+
+Funksjonsblokk som håndterer en Analog inngang eller analog verdi.
+Verdien kan skaleres og midles samt sjekkes status på. Det finnes masse
+justerbare parameter.
+
+== Variabler
+[source,]
+----
+FUNCTION_BLOCK fbAnalog EXTENDS fbEu
+VAR_INPUT
+    Text                    : WSTRING;                                      //Alarmtekst 
+                            
+    //Innganger             
+    Input                   : INT;                                          //Inngangsverdi for integer, for bruk ved f.eks IO-mapping. Ved behov for andre datatyper som Input, kall "SetInput" eller "SetInputWithStat"
+    Stat                    : INT;                                          //Status på evnt inngangspinne io-kort
+    ConnectedTo             : WSTRING := "Ikke satt";
+    CalibrationMeasurement  : fbEU; //Kontrollmåling for kalibrering med multipliseringsfaktor
+    CalibrateReq            : BOOL; //Forespørsel kalibrer (multiplier) mot kontrollmål.
+    ResetCalibration        : BOOL; //Tilbakestill multiplier til 1. 
+    //Konfigurering         
+    RawMin                  : REAL              := 0;                       //Skaleringsverdi fra - min 
+    RawMax                  : REAL              := 32767;                   //Skaleringsverdi fra - max 
+                            
+    Multiplier              : REAL              := 1.0;                     //Multipliseringsfaktor. Se detaljert beskrivelse i funksjonsblokkdokumentasjonen (øverst) 
+    Mode                    : eAnalogInputMode  := eAnalogInputMode.Scale;      //Valgt behandling av råverdi. eInputMode.Scale = Vanlig skalering, eInputMode.Multiply = multiplisering med en faktor, eInputMode.None = Ingen behandling mellom input og Pv
+    ErrorMode               : eAnalogErrorMode  := eAnalogErrorMode.GoToEu; //Om verdi skal fryses, eller gå til EUMAX ved OVERRANGE og EUMIN ved UNDERRANGE ved feil.                                                               
+                                                                            
+    PulseValue              : REAL              := 1.0;                     //Hvis den brukes som pulsmåler, dette er verdien av en puls.
+    FilterTime              : fbEU := (EuMin :=0, EuMax := 60, Eu := "s", Value := 1); //Tid som skal samples over, i sekunder
+    PvOffset                : REAL;                                         //Satt offset
+    Cx                      : stCx;                                         //Commisioningobjekt
+
+END_VAR
+
+VAR_OUTPUT
+    UnmodifiedValue         : fbEU; //Skalert/filtrert verdi før multiplier. 
+    Raw                     : LREAL;                                        //Råverdi som brukes
+    Error                   : BOOL;                                         
+    ErrorNo                 : eAnalogErrorNo;                                       
+    EuError                 : BOOL;                                         //EuMin og EuMax er lik!! Fiks!
+    {attribute 'OPC.UA.DA' := '0'}
+    isPulse                 : BOOL;
+    {attribute 'instance-path'} 
+    {attribute 'noinit'} 
+    FullPath                : WSTRING; //Full path inkludert hostnavn
+    Path                    : WSTRING; //Forkortet path
+END_VAR 
+----
+
+== Skaleringsmodus
+
+=== Skalering (eAnalogInputValue.Scale)
+
+I skaleringsmodus brukes *RawMin* og *RawMax* sammen med *EuMin* og
+*EuMax* til å skalere verdien. Dette utføres med formel for lineær
+skalering:
+
+[source,]
+----
+  Value = EuMax + {{EuMax - EuMin}/{RawMax - RawMin}}*(RawMax - Input) 
+----
+CAUTION: Multiplier faktoren er alltid tilgjengelig for bruk uavhengig av
+modusvalg.
+
+
+
+=== Multiplisering (eAnalogInputValue.Multiplier)
+
+I multipliseringsmodus brukes *Multiplier* til å beregne en Value.
+
+[source,]
+----
+ Value = Input * Multiplier 
+----
+
+== Filtrering
+
+Som standard er funksjonsblokken satt opp med en midlingstid på 1
+sekund. Dette gjøres ved å bruke *fbAvg*. Denne tiden kan justeres ved å
+endre *FilterTime*. Verdien midles løpende med ett array på 10
+posisjoner. Hvor ofte arrayet får ny verdi styres av *FilterTime* på
+følgende måte
+
+[source,]
+----
+UpdateInterval := FilterTime / ArraySize
+
+Eksempel: 
+FilterTime = 1 //s
+ArraySize = 10
+
+UpdateInterval = 1/10 = 0.1 //s
+----
+
+== Feilhåndtering
+
+=== Til EuMin/EuMax (eAnalogErrorMode.GoToEu)
+
+Logikken sjekker om *Stat* er 0, 1 eller 2. Dette følger statusen fra
+analoginngangen på Beckhoffkort. Hvis underrange blir *value* satt til
+*EuMin*, hvis overrange blir value satt til *EuMax*.
+
+[source,]
+----
+0 = OK
+1 = Underrange
+2 = Overrange
+----
+
+==== Freeze (eAnalogErrorMode.Freeze)
+
+Verdi fryses til siste verdi før feil.
+
+NOTE: Hvis Input hentes fra andre måter enn *SetAnyInputAndStat* eller med
+metode på Beckhoff IO-kort, så må denne settes av utvikler.
+
+
+== Kalibrering og offset
+
+Kalibrering av analoginngangen utføres ved å skrive inn en
+kontrollmåling i *CalibrationMeasurement* og sette *CalibrateReq* til
+TRUE. Denne bruker så *Multiplier* til å kalibrere Value. *PvOffset* er
+den justerbare Offsetverdien for Value. Denne brukes til å forskyve
+verdien.
+
+WARNING: Kalibrering bruker samme variabel som Multipliermodus. I de fleste
+tilfeller er det sensorikk som skal kalibreres, multipliermodus er
+tiltenkt modbusenheter som ikke har behov for kalibrering.
+
+==  Pulsmåler
+
+Funksjonsblokken håndterer BOOL *Input*. Sett *PulseValue* til det en
+puls er verdt, så vil *Value* bli en løpene måling. Da må det mappes
+slik:
+
+[source,]
+----
+ObjectName.SetAnyInput(DinBool);
+----
+
+= Deklarering
+
+[source,]
+----
+VAR
+    ObjectName : fbAnalog := (EuMin := 0, EuMax := 100, Eu := "%", Text := "Beskrivende tekst om objektet");
+END_VAR
+----
+
+= Implementering
+
+[source,]
+----
+ObjectName( 
+    SumAlarm := AktuellSumalarm //Valgfritt
+);
+----
+
+== Mapping mot Beckhoff IO-kort som finnes i nklib
+
+[source,]
+----
+IoKortNavn.MapToCh1(Map := ObjectName);
+----
+
+== Mapping mot Beckhoff IO-kort som IKKE finnes i nklib
+
+[source,]
+----
+ObjectName.Input    := KildeTilVerdi;
+ObjectName.Stat     := StatusTilVerdi;
+ObjectName.ConnectedTo  := "Beskrivelse av kilde";
+----
+
+== Mapping mot hvilken som helst kilde, inkludert pulsmåler(BOOL)
+
+[,source]
+----
+ObjectName.SetAnyInputAndStat(KildeTilVerdi, StatusTilVerdi);
+ObjectName.ConnectedTo  := "Beskrivelse av kilde";
+----

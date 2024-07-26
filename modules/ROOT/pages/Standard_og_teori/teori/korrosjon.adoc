@@ -1,0 +1,142 @@
+
+== Korrosjonsteori
+
+=== Rustfrie stål
+Et stål betegnes som rustfritt, dersom det inneholder mer enn 12vt% krom i legeringen. Krom vil reagere
+med oksygen i omgivelsene og danne kromoksid. Kromoksid danner et passivt sjikt metalloverflaten som
+forhindrer stålet fra å korrodere.
+
+Legeringssammensetningen påvirker hvor sterkt dette passivsjiktet er, og vil sammen med korrosive miljø og temperaturer avgjøre hvilke korrosjonsformer legeringen er utsatt for. Såkalte «rustfrie» stål vil være utsatt for korrosjonsangrep, men disse angrepene vil være lokale, og angrepene vil skje i områder hvor det passive sjiktet er svakt. Evnen en legering har til å motstå korrosjonsangrep kan fastslås praktisk eller teoretisk.
+
+Praktisk brukes CPT (Critical Pitting Temperature), som fastslås ved laboriatorietesting iht. ASTM G150-99 evt. ASTM G-48 test. Disse testene måler den laveste temperaturen en kjemisk løsning er i stand til å bryte ned passivsjiktet på metalloverflaten.
+multiconsult.no 22.03.2024 / 00 Side 7 av 15 CPT-verdier for rustfritt stål fra disse standardiserte prøvene kan variere mellom 10 °C for det ”enkleste”
+austenittiske stålet EN 1.4307 (304) til nærmere 100 °C for høylegerte ”superaustenittiske” varianter.
+
+Teoretisk beskrives korrosjonsmotstanden ved den såkalte PRE-verdien, (Pitting Resistance Equivalent):
+
+PRE = % Cr + 3,3 x % Mo + 16 x % N
+
+Ut fra formelen ser man at det ikke bare er krominnholdet som bestemmer motstanden mot lokale
+korrosjonsangrep. Krom er hovedkomponenten som i oksidsjiktet som effektivt forhindrer korrosjonsangrep, jo høyere krominnhold, jo sterkere korrosjonsbeskyttelse. Minimum krominnhold for at et stål kan betegnes rustfritt er 11%, mens den øvre praktiske grense for tilsats er >30%. Ved høyere krominnhold, vil varmehandling av stålet som f.eks. sveising føre til utfelling av en uheldig kromrik sigmafase som gjør materialet sprøtt. Legeringselementet krom beskytter i hovedsak mot korrosjon forårsaket av klorider. Tilsats av molybden vil styrke motstanden mot korrosjonsangrep forårsaket av syrer, særlig om stålet også er legert med nitrogen. I tillegg vil nikkel påvirke korrosjonsmotstanden til austenittiske stålkvaliteter mot enkelte kjemikalier.
+
+=== Korrosjon på rustfrie stål (1) (2) (3) (4)
+
+Grunnet det passive sjiktet på rustfrie stål, vil de ikke utsettes for det som kalles generell korrosjon. Dennekorrosjonsformen skjer dersom hele metalloverflaten deltar i en aktiv korrosjonsprosess. For rustfrie stål vil korrosjon finne sted på svake punkter i passivfilmen. Disse områdene vil angripes lokalt og avhengig av miljøet vil lokale angrep kunne utvikle seg svært raskt. Det at korrosjon skjer lokalt gjør at man for rustfrie stål ikke kan beregne korrosjonsrate eller benytte seg av korrosjonsmonn. Det er flere ulike korrosjonsmekanismer som kan skje på rustfrie stål; avsnittene under vil redegjøre for de vanligste.
+
+==== Pitting (2) (3) (4)
+For austenittiske rustfrie stål med lavt krominnhold er punktkorrosjon eller pitting den mest utbredte
+korrosjonsformen. Denne korrosjonsformen oppstår dersom det finnes et svakt punkt i passivfilmen. Dette
+kan være forårsaket av mekaniske skader (kontaktskader) som har forurenset materialet med karbonstål,
+mekanisk deformasjon, varmebehandling, sliping, bruk av skjærebrenner, vinkelsliper etc..
+
+Klorider er normalt den vanligste årsaken til korrosjonen. Særlig utsatt er metall som eksponeres for
+saltvann eller sjøsprøyt og samtidig solvarme. Dette kan føre til at designtemperatur overskrides.
+
+Hvor utsatt ulike rustfrie stål er for pitting kan undersøkes ved laboratorieforsøk for å fastslå CPT som tidligere nevnt. Disse bør brukes med forsiktighet, da disse er bestemt i lab med syntetisk sjøvann. Dette har en annen kjemisk sammensetning enn naturlig sjøvann og inneholder ikke biologisk materiale. Verdiene benyttes derfor fortrinnsvis til å rangere ulike metallers egnethet i forhold til hverandre. Eksempler på dette er vist i figur under
+
+image::/standard_og_teori/teori/korrosjon_1.png[korrosjon_1.png]
+CPT verdier for ulike rustfire stål, testet iht. ASTM G48 og G150 (4)
+
+Dersom pitting oppstår, vil de elektrokjemiske forholdene endres. Da vil området som er utsatt for
+korrosjon være en aktiv anode, mens resten av metallet som fortsatt er beskyttet av oksidfilmen, være en
+katode. Dette vil gi et svært ugunstig anode/katode-forhold og korrosjonsangrepene utvikler seg normalt
+svært raskt.
+
+==== Spaltekorrosjon (1) (2) (5)
+Spaltekorrosjon skjer i spalter, hvor det er tilgang på elektrolytt og gjerne dårlig tilgang på oksygen. Dermed vil korrosjonen sørge for at det blir lokalt svært basisk miljø i spalten som er anoden i reaksjonen, mens resten av metalloverflaten vil være katoden. Mekanismene som skjer i spaltekorrosjon kan sammenliknes med pitting og har samme årsak, men det er risiko for at spaltekorrosjon vil skje ved lavere temperaturer enn pitting.
+
+Hvor utsatt et rustfritt materiale er for spaltkorrosjon kan testes ved en av prøvemetodene i ASTM G-48, da fastslås CCT (Critical Crevice Temperature). Dette er også en veiledende test, som bør benyttes for å
+rangere ulike materialkvaliteter. Eksempel på CCT er visst i Figur under
+
+image::/standard_og_teori/teori/korrosjon_2.png[korrosjon_2.png]
+CCT for ulike rustfrie stål testet iht. ASTM G48 (4)
+
+=== Galvanisk korrosjon
+
+Galvanisk korrosjon betegner prosessen som skjer når to ulike metaller er i kontakt med hverandre. I
+galvaniske koblinger vil det minst edle metallet fungere som en anode og ofre seg for å beskytte det mer
+edle materialet, som da vil være katoden. Hvor utsatt et metall er for galvanisk korrosjon bestemmes av differansen i det elektrokjemiske potensialet, dette vises som oftest ved den galvaniske spenningsrekken
+vist i Figur 6. Her vil avstanden mellom de ulike metallene være en drivende faktor for korrosjon.
+
+image::/standard_og_teori/teori/korrosjon_3.png[korrosjon_3.png]
+Den galvaniske spenningsrekken (3)
+
+En annen viktig faktor er størrelsesforholdet mellom anode og katode. I Figur under kan man se hvordan
+lavlegerte skruer korroderer i kontakt med mer edelt materiale. I dette tilfellet er det et ugunstig
+arealforhold, dvs. en liten anode (skruene) og en stor katode (beslaget). Dette vil føre til rask tæring påskruene.
+
+image::/standard_og_teori/teori/korrosjon_4.png[korrosjon_4.png]
+Eksempel på galvanisk korrosjon 
+
+`Galvanisk korrosjon kan også oppstå utilsiktet ved at metalloverflaten forurenses med metallpartikler fra verktøy, slipeskiver og stålbørster`. Austenittisk rustfritt som 304 og 316 er i utgangspunktet ikke magnetisk, men sveiseprosesser kan føre til at det blir det. Dermed kan metallpartikler fra metallarbeid kunne tiltrekkes overflaten og forårsake korrosjon.
+
+== Korrosjonsbeskyttelse
+
+Katodisk beskyttelse med offeranoder benytter prinsippene ved galvanisk korrosjon. Dersom et lite edelt
+materiale introduseres i kretsen med hensikt, vil korrosjonsreaksjonen kunne ledes dit og dermed
+kontrolleres. For at anoden skal fungere, er det viktig at den befinner seg i metallisk kontakt med det den skal beskytte og samtidig i samme elektrolytt. Dette fører til en sammenhengende elektrokjemisk krets. For å velge riktig anodelegering, benyttes den galvaniske spenningsrekken. Typiske offeranoder for å beskytte stål er laget av aluminium eller sink ettersom de er mindre edle og derfor mer elektronegative enn stål. Et anlegg for katodisk beskyttelse beregnes og monteres normalt iht. DNV-OS-B401 (6).
+
+===  Sveis av rustfrie materialer 
+Å sveise rustfrie kvaliteter krever en annen kompetanse og andre forholdsregler enn sveising av lavlegert konstruksjonsstål normalt gjør. Valg av sveisemetode, tilsatsmateriale, beskyttelsesgass og bakgass må velges med tanke på å bevare korrosjonsegenskapene.
+
+Ved varmetilførsel til høyt legerte metaller, vil det forårsake at legeringselementene diffunderer. Dette kan føre til at det formes uheldige intermetalliske faser, hvorav sigmafasen er mest kjent. Intermetalliske faser
+påvirker legeringen på ulike måter. Mekanisk påvirker de ved å redusere dutilitet og skårslagsseighet. De intermetalliske fasene er kromrike. Dermed kan det i områder være for lite krom til at det dannes
+beskyttende oksidfilm. Dermed vil det finnes initeringspunkter for korrosjon. 
+
+Sannsynligheten for å lykkes ved sveising av rustfritt øker dersom man har en kvalifisert prosedyre med god kontroll på interpass temperaturen. Det bør finnes egne soner for sveising av rustfritt for å unngå
+forurensing fra metallarbeider.
+
+=== Etterbehandling av sveis
+Sveising vil alltid medføre at fugen og grunnmaterialet vil forurenses. Forurensing vil bestå i misfarging / oksidasjon, samt slagg og andre sveisefeil som sprut. Rustfrie sveiser børimage::/standard_og_teori/teori/korrosjon_5.png[korrosjon_5.png] inspiseres iht. Annex B i NORSOK M-601, vist i Figur under.
+
+Oksidasjon, sveisefeil, forurensninger, samt grov overflate påvirker korrosjonsegenskapene. `For å
+gjenopprette korrosjonsegenskapene, korrigeres normalt feil og mangler ved mekanisk og kjemisk rens`.
+Mekaniske metoder innebærer sandblåsing med ikke-metallisk grit, sliping med ikke-metalliske skiver eller stålbørster. Dersom børster benyttes MÅ disse være av mer edelt materiale enn sveisen og
+tilsatsmaterialet. Kjemiske metoder involverer en eller annen type beising med flytende syre eller pasta. Hensikten med beising er å styrke passivsjikt på overflaten ved å la metallet danne en ny,
+sammenhengende film, dette kalles passivering eller repassivering.
+
+image::/standard_og_teori/teori/korrosjon_5.png[korrosjon_5.png]
+Annex B, NORSOK M-601. Refereansebibiliotek for visuell kontroll for rustfrie sveiser
+
+
+=== Tiltak for å redusere korrosjonsrisikoen
+
+* Overflater holdes rene.
+* Sveiser slipes for en jevn overflatefinish.
+* Rustfritt stål må ikke forurenses med partikler fra konstruksjonsstål
+* Sveising av rustfritt stål og karbonstål må skje adskilt
+* Dersom sveiser skal rengjøres med børster må disse være rustfrie, det er også viktig at børstene er
+av lik eller høyere kvalitet enn sveisematerialet. F.eks. vil børster i 304 avsette partikler i 316 som
+vil fungere som initieringspunkter for korrosjon.
+* Sveising bør utføres med kvalifiserte prosedyrer iht. anerkjente standarder, for eksempel ISO
+15614.
+* Sveisetilsats og gass må avpasses leverandørenes anbefaling.
+* Etterbehandling av sveiser må utføres for å repassivere oksidsjiktet.
+* Rustfrie konstruksjoner og overflater bør bli inspisert og rengjort regelmessig. Det er ekstremt
+viktig å fjerne avleiringer og i sjøvann fjerne planter og dyr som har festet seg til ståloverflaten.
+Overflater som utsettes for sprut av sjøvann som deretter fordamper bør vaskes med rent vann så
+ofte som mulig.
+* Galvaniske koblinger bør unngås. Dersom ulike materialer må være i kontakt og isolasjon ikke er
+mulig, må anode/katode-forholdet gjøres så gunstig som mulig. Dette betyr at det minst edle
+metallet bør ha størst overflate. Sveiser mellom rustfritt og karbonstål bør males. Unntak fra disse
+reglene er dersom delene er katodisk beskyttet med offeranoder. For at disse skal virke, må
+metalloverflatene være i elektrisk kontakt.
+* Korrosjon drives av temperatur. Hold alltid lavest mulig driftstemperatur. Særlig oppmerksom bør
+man være dersom man kan få stillestående vann med direkte oppvarming fra sol.
+
+=== referanser
+
+1. Tibnor. Rustfri Håndbok. Oslo : Tibnor AS, 2021.
+1. Mattson , Einar og Kucera, Vladimir. Elektrokemi og korrosionlära. Stocholm : Swerea KIMAB, 2009.
+1. Bardal, Einar. Korrosjon og korrosjonsvern. Trondheim : Tapir , 1994.
+1. Outo Kumpo. Corrosion Handbook . Espoo : Outokumpo Oyj, 2009.
+1. Johnsen, Roy og Blucher, Daniel. «Rustfritt stål» er ikke alltid rustfritt. TU. [Internett] 08 06 2023.
+https://www.tu.no/artikler/rustfritt-stal-er-ikke-alltid-rustfritt/532078.
+1. DNV. Cathodic protection design. DNV-RP-B401.
+1. ISO 12473: General principles of cathodic protection in seawater. 2017.
+1. Store Norske Leksikon. [Internett] [Sitert: 03 02 2022.] https://snl.no/katodisk_beskyttelse.
+1. NS-EN 12496: Galvaniske anoder for katodisk beskyttelse i sjøvann og saltholdig leire. s.l. : Standard Norge, 2013.
+1. Astrid Bjørgum (Sintef), Ole Øystein Knudsen (Sintef), Brit Graver (DNV), Edmund K. Natvik (DNV). Håndbok:
+Dokumentasjon av årsaker og tiltak mot korrosjon på fiskefartøy - Oppdragsgiver: FHF - Fiskeri- og
+havbruksnæringens forskningsfinansiering (901578). s.l. : Sintef Industri, 2021.
+11. NS-EN ISO 13174: Katodisk beskyttelse av havneinstallasjoner. s.l. : Standard Norge, 2012.

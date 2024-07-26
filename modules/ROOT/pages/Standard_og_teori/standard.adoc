@@ -1,0 +1,15 @@
+== Standarder
++
++
+
+=== NS3451:2009 Bygningsdelstabellen
+Standard for oppbygging og koding av en bygging. 
++
++
+
+=== SN/TS 3456:2018 
+Krav til dokumentasjon / FDV dokumentasjon ved overlevering av bygg
+
+=== NS6450:2016
+«Idriftsetting og prøvedrift av tekniske bygningsinstallasjoner» 
+Standard for driftsettelse og prøvetift av tekniske bygningsinstallasjoner. 

@@ -1,0 +1,14 @@
+== Merkesystem
+
+[cols="2,2" width=100%]
+|===
+|**Materielltype**
+|**Leverandør**
+
+| Merkesystem
+| https://knutwall.eu/no/ +
+ https://en.cabicon.com/ +
+ 
+|===
+ 
+https://www.weidmueller.com/int/products/workplace_accessories/software/m_print_pro.jsp[Weidmuller M-pro] Programvare for Weidmuller kabelmerkemaskiner. 

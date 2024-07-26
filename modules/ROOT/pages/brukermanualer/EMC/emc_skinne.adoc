@@ -1,0 +1,12 @@
+//:toc:
+:toc-title: Innholdsfortegnelse
+:toclevels: 5
+:table-caption!:
+//:sectnums:
+//:sectnumlevels: 4
+
+= Montasjeinstruks EMC skinne
+
+Standard metode for å sikre best praksis for EMC-skinne levert i tavler. 
+
+image::sun.jpg[]

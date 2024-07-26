@@ -1,0 +1,40 @@
+= Engineering Value
+
+Grunnblokken for hele nklib. fbEU skal brukes som erstatning for REAL i
+prosjekter med nklib, dette for at vi skal vite status, min, maks og
+enhet på alle verdier som skal opp i SCADA.
+
+== Variabler
+
+[source,]
+----
+FUNCTION_BLOCK fbEu
+VAR_INPUT
+    Value   : REAL; //Verdi
+    EuMin   : REAL; //Minste verdi
+    EuMax   : REAL; //Høyeste verdi
+    Eu      : WSTRING; //Enhet
+    Invalid     : BOOL := FALSE; //Verdien er valid 
+END_VAR
+VAR_OUTPUT
+    
+END_VAR
+----
+
+WARNING: Value endebegrenses mellom EuMin og EuMax.
+
+= Deklarering
+[source,]
+----
+VAR
+    ObjectName : fbEu := (EuMin := 0, EuMax := 100, Eu := "%");
+END_VAR
+----
+= Implementering
+[source,]
+----
+ObjectName( 
+    Value := DinVerdi,
+    Invalid:= DinBetingelseForValid,
+);
+----

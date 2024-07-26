@@ -1,0 +1,12 @@
+:toc:
+
+== header
+
+= Overskrift
+
+NOTE: Hva må med? 
+
+TIP: Bruk alltid siste versjon av E3.
+
+
+Det er ellers full støtte for asciidoc. 

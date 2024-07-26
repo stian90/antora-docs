@@ -1,0 +1,52 @@
+## filename: custom-theme.yml
+extends: default
+
+title-page:
+  background-image: image:front.jpg[]
+
+header:
+  font_size: $base_font_size_small * 1.2
+  line_height: 1
+  height: $base_line_height_length * 2
+  vertical_align: middle
+  recto:
+    center:
+      content: '{document-name}'
+    left:
+      content: image:nk.png[width=120]
+    right:
+      content: '{revnumber}'
+  verso:
+    center:
+      content: $header_recto_center_content
+    left:
+      content: $header_recto_left_content
+    right:
+      content: $header_recto_right_content
+
+page:
+  margin: [0.7in, 0.67in, 0.67in, 0.67in]
+
+footer:
+  font_size: $base_font_size_small
+  border_color: dddddd
+  border_width: 0.25
+  height: $base_line_height_length * 2.5
+  line_height: 1
+  padding: [$base_line_height_length / 2, 1, 0, 1]
+  vertical_align: top
+  image-vertical-align: -3
+  recto:
+    right:
+      content: '{page-number} av {page-count}'
+    center: 
+      content: 'Copyright Nordkontakt AS -- {docyear}'
+    left:
+      content: '{chapter-title}'
+  verso:
+    right:
+      content: $footer-recto-right-content
+    left:
+      content: $footer-recto-left-content
+    center:
+      content: $footer-recto-center-content

@@ -1,0 +1,31 @@
+---
+title: 1. Installering
+description: Installasjon av Beckhohff
+published: true
+date: 2024-02-12T17:38:32.077Z
+tags: 
+editor: markdown
+dateCreated: 2024-02-04T19:51:46.257Z
+---
+
+# Header
+Your content here
+
+Installasjon
+
+> Nordkontakt kjører pr. nå versjon 2024.01.10
+{.is-success}
+
+1. Gjør alltid dette
+2.  ***ikke*** dette 
+
+U = I^2^ * R
+
+![rtfm.jpeg](/rtfm.jpeg =500x500)
+
+`SELECT * FROM table WHERE id = 1`
+
+<kbd>Hei</kbd>
+
+
+Legge til ytterligere en tekst her. 

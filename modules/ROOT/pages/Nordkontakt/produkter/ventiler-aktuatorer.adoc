@@ -1,0 +1,21 @@
+== Ventiler og aktuatorer
+
+== Tabell over leverandører 
+
+[%hardbreaks]
+[cols="2,2"]
+|===
+|**Leverandør**         |**Type ventil**
+
+| Samson                | Ventiler og aktuatorer
+
+| Belimo                | Ventiler og aktuatorer og sensorer. Primært byggautomasjon
+
+| Burkert               | * Magnetventil + 
+                          * Elektromotor ventil 
+                          * Reguleringsventiler 
+                          * Proporsjonalventiler
+                          * Pneumatikk og prosessgrensesnitt
+                          * Masflow controllere 
+
+|=== 

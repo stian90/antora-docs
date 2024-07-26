@@ -1,0 +1,722 @@
+:toc:
+:toc-title: Innholdsfortegnelse
+:toclevels: 5
+:table-caption!:
+//:sectnums:
+//:sectnumlevels: 4
+:imagesdir: ../../images/ 
+:figure-caption: Figur
+:stem: latexmath
+
+= EMC
+
+Dette dokumentet er ment som en introduksjon til teorien bak EMC/EMI og radioutstråling sam beskrivelse av tiltak for å gi god EMC for elektriske anlegg. Dersom man ikke er interessert i teorien kan man hoppe rett til kappitlene <<Tiltak for god EMC/EMI>>og starte derfra. 
+
+== EMC vs EMI 
+
+**EMC** +
+Elektromagnetisk sameksistens (ElectroMagnetic Compatibility) vil si utstyr/apparaters evne til å fungere tilfredsstillende i et elektromagnetisk miljø, og uten å introdusere utålelig elektromagnetisk støy på andre utstyr/apparater i dette miljøet.
+
+EMC berører to grunnleggende begreper, emisjon (eng. "emission"), dvs støyenergi utsendt fra en kilde ("støyenergi"), og immunitet, dvs evnen til å virke uten redusert yteevne i nærvær av støy. Generert støy kan være såvel strålt som ledningsbundet ,og omfatter både lavfrekvente og høyfrekvente fenomener, bredbåndet og smalbåndet. 
+
+Det er viktig å være klar over at støynivået (emisjonsnivået) er en statisk fordelt parameter. I praksis er det vanskelig (og kostbart!) å bestemme det aller høyeste støynivået som forekommer. I tillegg vil deette opptre svært sjelden. 
+
+**EMI** +
+Elektromagnetisk forstyrrelse (ElectroMagnetic Interference).
+
+Forskrift om elektrisk utstyr sier at konstruksjon og produksjon av elektrisk utstyr skal være slik at utstyret ved korrekt montering, installasjon, vedlikehold og tiltenkt bruk ikke medfører fare.
+Når et apparat eller system fungerer uforstyrret i sitt elektriske miljø, samtidig som det selv ikke forurenser dette miljøet ut over gitte grenser, kaller vi det EMC - elektromagnetisk forenlighet.
+I signalteknikken brukes stadig lavere energinivåer, og utilsiktet påvirkning utenfra, som gjenkjennes som støy, kan føre til utilsiktet virkemåte på et signal eller utstyr (EMI – Elektromagnetisk interferens).
+
+Kort oppsummert betyr EMC (elektromagnetisk forenlighet) at et apparat eller system:
+
+*	ikke forstyrrer andre apparater/systemer (som er beregnet på å stå i det samme miljøet)
+*	ikke er mottakelig for forstyrrelser fra andre apparater/systemer
+*	ikke forstyrrer seg selv
+
+.Støy kan være ledningsbåren (via kraft- og signalkabler og jordingssystemet), og luftbåren (elektromagnetiske forstyrrelser fra nærliggende maskiner og installasjoner, atmosfæriske utladninger og elektrostatiske utladninger). Interne støykilder kan også være kilde til EMI.
+image::standard-og-teori/teori/emc-16.png[width="400"]
+
+Her er noen metoder for å oppnå god EMC/EMI:
+
+- valg av kabel, kabelforlegning og kabelsegregering
+- kabelskjerming og nipler
+- filtrering av signaler
+- jording/potensialutjevning
+- hensiktmessig plassering av utstyr
+- valg av nødvendig beskyttelsesmetoder som for eksempel overspenningsvern
+- organisatoriske metoder – utstyr som påvirker hverandre blir ikke benyttet samtidig.
+- Vi reduserer styrken på støykilden til akseptable nivåer
+- Vi øker immuniteten til ”offeret” til akseptable nivåer
+- Vi kapsler inn støykilden
+- Vi kapsler inn ”offeret” 
+
+Ved å hindre at det flyter strømmer i jordledninger, strømmer mellom jordede anleggsdeler og sirkulerende jordstrømmer, reduseres problemer med forstyrrelser fra jordingsanlegget.
+
+EMC-jording er å lede støyende strøm ønsket vei, for eksempel utenom et mulig støy-”offer”. Gjennom lav-impedante forbindelser oppnås spenningslikhet mellom krets og skjerm.
+
+== Elektromagnetisk stråling
+EMC-problemer er ofte knyttet til ut- eller innstråling av elektromagnetiske bølger, også kalt radiobølger. 
+Slik utstråling opptrer lettest i kretser der en har vekselstrømmer med høy frekvens.
+
+I en elektromagnetisk bølge er det over alt et bestemt forhold mellom elektrisk feltstyrke E og magnetisk feltstyrke H og forholdstallet kalles "bølgeimpedansen" Z0.  
+
+latexmath:[ Z_0 = \frac{E}{H} = \sqrt{\frac{\mu}{\epsilon}} = 120\pi = 377 \Omega ]
+
+Bølgelengden kan regnes ut fra formelen: 
+
+latexmath:[ Z\lambda[m\] = \frac{300}{f[MHz\]}]
+
+=== Beregning av effekttettheten i en radiobølge 
+image::standard-og-teori/teori/emc-42.png[width="200" float="left"]
+I punkt A står en "antenne" som stråler ut en kuleformet radiobølge som brer seg utover i alle retninger med hastighet c. Ei slik "ideelt rundstrålende" antenne kalles en "isotropisk antenne".
+Dersom antenna tilfører bølgen en effekt P watt, vil denne fordele seg over kulebølgens areal Atot= 4piR2, slik at effekttettheten i bølgefronten i en avstand  R er: 
+
+latexmath:[ P_d = \frac{P}{A_tot} = \frac{P}{4 \pi R^2} [\frac{W}{m^2}\] ]
+
+Effekttettheten avtar altså proporsjonalt med avstanden R i kvadrat, dersom en kan se bort fra effekttap i bølgen
+
+**En dobling av avstanden vil for eksempel redusere effekttettheten til 1/4, eller en reduksjon med 6 dB.**
+{nbsp} +
+{nbsp} +
+
+=== Sammenhengen mellom effekttetthet og feltstyrke
+Sammenhengen mellom elektrisk feltstyrke E, magnetisk feltstyrke H, effekttetthet Pd og bølgeimpedans Z0 er svært analoge til sammenhengene vi har mellom U, I, P og Z i kretsteknikken, for eksempel har vi:
+
+latexmath:[ Z_0 = \frac{E}{H}] + 
+latexmath:[ P_d = \frac{E^2}{Z}]
+
+Effekttettheten Pd er altså proposjonal med E2. Foran har vi sett at Pd i bølgen avtar proporsjonalt med R2, feltstyrken E vil dermed avta proporsjonalt med R.
+
+=== Sammenheng mellom leders utstråling og lengde
+Utstrålingen av radiobølger er avhengig av antennas størrelse og form. Dette er en hel vitenskap for seg, og vi skal bare antyde at for antenner som er kortere enn &#x3BB;/4, vil antenna stråle bedre jo lenger den er. **En leder som fører vekselstrøm med høy frekvens, vil virke som en senderantenne, og hvis dette er uønsket må lederlengden holdes kortest mulig.**
+
+Antennas utforming har stor betydning for hvordan feltene rundt antenna blir. En kort rett leder (piskantenne) vil for eksempel gi et sterkt elektrisk felt E og et svakere magnetisk felt H. 
+(Tenk pigtail)
+
+Følgelig vil nærfeltets impedans Z=E/H være høyere enn i fritt rom. 
+Ei strømsløyfe (loopantenne) vil hovedsakelig gi et magnetisk felt H og et svakere elektrisk felt E slik at bølgeimpedansen  Z=E/H er lav i nærfeltet.
+
+Strømsløyfer på kretskort eller som kabelsløyfer er ofte årsak til EMC-problemer ved at de virker som antenner for elektromagnetiske felt.
+
+Strømsløyfas funksjon som mottakerantenne kan beregnes ut fra den grunnleggende formelen for indusert spenning i ei ledersløyfe med N vindinger som gjennomstrømmes av en tidsvarierende magnetisk fluks
+
+latexmath:[ U_{ind} = N \frac{d\phi}{dt} ] +
+som kan omformes +
+latexmath:[ U_{ind} = N \frac{d \{A \cdot B(t)\}}{dt} = N \frac{d \{ A \cdot \mu _0 \cdot H(t)}{dt} = N \frac{d \{ A \cdot \mu _0 \cdot H sin( 2 \pi ft)\} }{dt}  ] 
+
+For ei sløyfe med N=1 vinding og areal A plassert i et elektromagnetisk felt med magnetisk feltstyrke H og sinusformet tidsforløp med frekvens f, **finner en da at uttrykket for maksimal indusert spenning blir:**
+
+latexmath:[ U_{ind} = 2 \pi  \cdot f \cdot \mu _0 \cdot A \cdot H] 
+
+(enhetene er  f[Hz],  U0= 4&#x3C0;10-7[H/m], A[m2], H[H])
+
+== Ulike typer interference
+Vi skiller mellom 5 ulike typer EMC interferense. I praksis er alle utstyr påvirket av dem samtidig, men en er ofte utslagsgivende og den vi ønsker å skjerme oss mot. Interferensen kan deles i to hovedgrupper igjen som feltbåren (strålt) og ledningsbåren (galvanisk) kobling. Tilsvarende snakker en ofte om feltbåren og ledningsbåren støy. 
+
+* Galvanisk interferens (galvanisk)
+* Kapasitiv interferens
+* Induktiv interferens
+* Bølgeinterferens
+* Strålingsinteferens
+
+.Ulike typer stråling og påvirkninger
+image::standard-og-teori/teori/emc-43.png[width="500"]
+
+=== Galvanisk interferens
+image::standard-og-teori/teori/emc-04.jpg[width="200" float="left"]
+Galvanisk interferens oppstår når to kretser bruker en felles referanse- eller returleder. 
+Den andre kretsen påvirkes som følge av strøm- eller spenningssvingninger i den første strømkretsen (f. eks. koblingsforløp). Men også feilaktig jording av skjermede måle-, styre- og reguleringstekniske kabler og signal-kabler kan føre til galvaniske påvirkninger.
+
+**Mottiltak:**
+
+* Den felles ledningsdelen skal legges mest mulig lavohmsk og med lite induktivitet (bruk av ledertverrsnitt med tilstrekkelig størrelse)
+* Skill strømkretsene i størst mulig grad
+* Hold felles tilledninger kortest mulig
+* Legg forgreningspunkter nærmest mulig strømkilden
+
+{nbsp} +
+
+=== Kapasitiv støypåvirkning
+image::standard-og-teori/teori/emc-05.jpg[width="200" float="left"]
+Kapasitiv kobling opptrer ved spenningsforskjell mellom to gjenstander, for eksempel mellom to kabler som ligger i nærheten av hverandre.
+
+Støyvariabelen til den kapasitive støypåvirkningen er den elektriske spenningen. Kapasitive støypåvirkninger forårsakes av elektriske vekselfelter i et system som virker forstyrrende. Et typisk eksempel på en kapasitiv støypåvirkning er når to kabler som er lagt parallelt over lengre avstand får egenskapene til to motstående konsensatorplater og disse egenskapene danner en kortslutning for høyfrekvente signaler.
+
+{nbsp} +
+{nbsp} +
+{nbsp} +
+{nbsp} +
+{nbsp} +
+
+.Luftbåren kapasitiv kobling. Det frekvensstyrte signalet fra frekvensomformeren til motoren har andre ”usynkroniserte” spenningsnivåer enn resten av anlegget. Denne spenningsforskjellen setter opp et elektrisk nærfelt med en kapasitiv støystrøm som resultat.
+image::standard-og-teori/teori/emc-19.png[width="400"]
+
+**Mottiltak:**
+
+* Unngå parallell legging i størst mulig grad, eller hold dem kortest mulig
+* Skap størst mulige avstander mellom uforstyrrende og forstyrret kabler (minsteavstand 60 - 100 cm)
+* Bruk av skjermede signal- og måle-, styre- og reguleringstekniske ledninger (skjerming foretas på én side)
+* Bruk av parvis tvunnede ledninger
+
+=== Induktiv støypåvirkning
+image::standard-og-teori/teori/emc-06.png[width="200" float="left"]
+Induktiv kobling skaper et magnetisk nærfelt rundt en elektrisk leder når det går strøm igjennom ledningen.
+Når ledningene løper parallelt, er koblingen størst.
+Skjerming av magnetfeltet kan utføres ved å legge den isolerte lederen direkte på et ledende jordplan, en kabelrenne eller lignende.
+
+Årsaken til induktiv støypåvirkning er et magnetisk vekselfelt. Rundt ledere som det flyter strøm gjennom, danner det seg et magnetfelt som også gjennomtrenger tilgrensende ledere. Strømendringer skaper også endringer i magnetfeltet, som igjen fører til at en spenning induseres i tilgrensende leder.
+
+Eksempel: Hvis to ledninger på 100 m ligger parallelt med hverandre i en avstand på 30 cm, og strømmen gjennom den forstyrrende lederen utgjør 100 A (50 Hz), induseres en spenning på ca. 0,3 mV i den forstyrrede lederen. Ved lik anordning, men med strømendring på 1 kA i 100 μs, induseres en spenning på ca. 90 mV. Jo større og raskere en strømendring er, desto høyere er den induserte spenningen.
+Disse strømendringene og pulsene er særlig store på frekvensomformere. 
+
+.Induktiv kobling (induktiv støyspenning)
+image::standard-og-teori/teori/emc-20.png[width="400"]
+
+
+**Mottiltak:**
+
+* Avstanden mellom sterkstrømskabler og signal-kabler samt måle-, styre- og reguleringstekniske kabler bør være minst 1 m
+* Parallellføringer skal være så korte som mulig
+* Ved bruk av tvunnede ledninger kan den induktive påvirkningen reduseres med ca. faktor 20
+* Bruk av skjermede ledninger som er lagt på på begge sider (skjerming)
+
+**Tvunnede ledninger?**
+Bruk av tvunnede ledninger reduserer den induktive støypåvirkningen, ettersom induksjonsretningen stadig snur i relasjon til støyfeltet grunnet tvinningen av lederne. For å unngå cross-talk anordnes nære par i en signal-kabel eller måle-, styre- og reguleringsteknisk ledning, med ulike revolveringslengder. Vanlig er revolveringslengder fra 30 til 50 mm. Ved sterkstrømskabler er revolveringslengden, avhengig av ledertverrsnitt, mellom 200 og 900 mm.
+
+=== Bølgestøypåvirkning
+image::standard-og-teori/teori/emc-07.jpg[width="180" float="left"]
+Bølgestøypåvirkning er ledningsførte bølger eller impulser som strekker seg over til nære signal- og måle-, styre- og reguleringstekniske kabler. Bølgestøypåvirkning oppstår også når en ledningskrets strekker seg inn til en annen krets innenfor en kabel. Ved galvanisk, kapasitiv og induktiv støypåvirkning hensyntas ikke de elektriske signalenes runtime på forstyrrende og forstyrret ledning. I spesielle tilfeller kan det hende at støyfrekvensens bølgelengde når samme størrelsesorden som ledningslengdene. Hvis dette skjer, må en effekt hensyntas også her.
+
+* Benytt kabel med skjermede par og samlet skjerm (skjerming)
+* Unngå feiltilpasninger i hele ledningsstrekket
+* Signaler med meget høyt nivå skal ikke føres i samme kabel som signaler med meget lavt nivå
+* Benytt kabel med høy refleksjonsfrihet, lav demping og lav kapasitet +
+
+
+=== Strålingsstøypåvirkning
+image::standard-og-teori/teori/emc-08.jpg[width="200" float="left"]
+Fra en forstyrrende faktor kan det også oppstå ikke-ledningsførte elektromagnetiske bølger som virker inn på anlegg og ledninger. Forstyrrende faktor er her den frie bølgen H0, E0. I nærfeltet kan det elektriske eller magnetiske feltet være fremherskende, alt etter type støy. **Høy strøm genererer hovedsakelig et magnetisk felt**, __høy spenning genererer hovedsakelig et elektrisk felt__. Den høyfrekvente støyenergien brer seg ut over ledninger som er tilkoblet støykilden og som muliggjør en direkte stråling (>30 MHz). Videre kan nære, kraftige sendestasjoner forårsake høy feltstyrke på kabelanleggets sted, og virke forstyrrende på kabler. I industribedrifter oppstår de aller største forstyrrelsene når induktiv last kobles ut. De høye, høyfrekvente spenningstoppene som oppstår ved slike prosesser, betegnes som Burst. Slike Bursts har frekvensspektre opptil 100 MHz.
+
+Når en elektromagnetisk bølge treffer en overgang mellom materialer med ulik permitivitet, vil bølgehastigheten normalt på grenseflaten endres. Dette vil gi avbøyning av bølgen og kan ved kraftige diskontinuiteter medføre refleksjon av bølgen. 
+
+Elektrisk ledende materialer er særlig effektive for avskjerming.
+
+Skjermdempningen S defineres som:
+
+latexmath:[S[dB \] = 20 \cdot lg \frac{Feltstyrke uten skjerm}{feltstyrke uten skjerm }]
+
+Skjermingsvirkningen kan skyldes flere mekanismer som er anskueliggjort i figuren under: 
+
+•	Det innfallende felt vil indusere strømmer i i metalloverflaten som frambringer et motsatt rettet felt ved platens overflate. Denne nye feltutstrålingen svekker resulterende felt like ved overflaten og vi får det som oftest kalles REFLEKSJONSDEMPNING.
+
+Refleksjonsdempningen avhenger av forholdet mellom bølgeimpedans og barriereimpedans. Barriereimpedansen avhenger av materialets konduktivitet og permeabilitet, og av bølgens frekvens.
+
+image::standard-og-teori/teori/emc-39.png[width="400"]
+
+Hvis medie a er fritt rom er impedansen Za = Z0 = 377ohm for elektromagnetisk fjernfelt. Overflateimpedansen til ei typisk metall skjermplate er lav , typisk Zb<<1ohm slik at det aller meste av innfallende bølgeamplitude Ai blir reflektert. 
+
+Inne i materialet vil feltet også svekkes. Denne svekkingen kan karakteriseres med materialets inntrengningsdybde i forhold til platetykkelsen.
+
+•	På platens bakside vil de svekkede strømmer i platens bakre overflate gjenutstråle et svekket felt. Dempningen fra platens forside til platens bakside benevnes ABSORPSJONSDEMPNING. Denne dempningen vil være den samme både for elektriske, magnetiske og elektromagnetiske felt og er som inntrengningsdybden avhengig av materialets ledningsevne og permeabilitet. Absorpsjonsdempningen i jernplate er derfor høyere enn i kobberplate (se figur).
+
+.Absorpsjonsdempning  i jern og kobber
+image::standard-og-teori/teori/emc-40.png[width="400"]
+
+**Mottiltak:**
+
+* Benytt skjerm med høye absorpsjons- og refleksjonsegenskaper (kobber eller aluminium). Her skal det benyttes ledende og helst komplett lukkede skjermer med lav koblingsmotstand og gunstige skjermdempingsverdier. 
+* Ved hovedsakelig magnetisk nærfelt, spesielt ved lave frekvenser, bør det i tillegg foretas skjerming med MU-metall eller et amorf metall.
+
+== EMC plan
+På noen anlegg kan det være hensiktsmessig å lage et EMC-program for anlegget. 
+
+Et EMC-program er en plan som har til formål å sikre at utstyr vil oppfylle sine tiltenkte funksjoner uten å forstyrre eller bli forstyrret av EMI fra annet utstyr.
+En slik plan bør inneholde følgende punkter:
+
+* Klasseinndeling av kabel (grad av støygenerering og grad av støyfølsomhet)
+* Spesifikasjon av kabeltyper
+* Forlegningskrav (oppfylle minimumsavstand mellom ulike klasser av kabler)
+* Montasje og utførelse av kabelstiger
+* Plan for avslutning/skjøting av ulike kabler/kabeltyper
+* Jording, fysisk utførelse og materialvalg
+* Støyskjerming av utstyr, støydempingstiltak (filtre, galvaniske skillekoblinger etc) i
+installasjonen
+
+.Materialkonstanter for noen skjermingsmaterialer
+|=== 
+|                   | Cu  | Al | Ag | Fe | Stål | Mumetal
+| o*10^6 (ohm/m)-1  | 58  | 38 | 63 | 10 | 0,14 | 0,16
+| u/u0 = Ur         | 1   | 1  | 1  | 1000 | 200 | 50000 
+|===
+
+Felt som trenger fram til platas bakside kan delvis "rereflekteres" fra platas bakside, noe som gir REREFLEKSJONSDEMPNING.
+
+Total skjermdempning  S[dB] = Refl. [dB] + Abs. [dB] +Rerefl. [dB]
+
+.Figur 4.3 Skjermdempning som funksjon av frekvensen for tynne kobberplater med forskjellig tykkelse.
+image::standard-og-teori/teori/emc-41.png[width="600"]
+
+I figuren er RE refleksjonsdempningen for elektrisk felt. Dempningen av elektromagnetiske felt varierer omtrent på samme måte.  RH er refleksjonsdempningen for magnetisk felt.
+
+Vi ser at selv den løvtynne kobberplata på 0.025mm gir god demping (RE+A > 100dB) av elektriske og elektromagnetiske felt ved alle frekvenser.
+
+Dempningen av magnetiske felt blir derimot dårligere jo lavere frekvensen er. Ved 50Hz er dempningen i størrelsesorden 3-4dB, altså knapt merkbar. Skal 50Hz magnetfelter avskjermes, trenger en relativt tykke plater av et materiale med høy permeabilitet  (for eksempel mymetall).
+
+**(Se side 13 og sett inn tabell)** 
+
+== Tiltak for god EMC/EMI
+
+=== Kabler 
+Kabler deles inn i fem klasser, som hver har egen karakteristikk med hensyn til støygenerering og støyfølsomhet.
+Som hovedregel skal alle de forskjellige kabelklassene A til E ha separat forlegning og avstanden bør være så stor som mulig.
+
+|===
+| Klasse | Klassifikasjon | Funksjon (eksempler)
+
+| A      
+|Støygenererende, ikke støyfølsomme, 24V – 600 VDC, 60 Hz, 400 Hz
+| * Kraftkabler +
+  * Kontrollkabler i kretser med mekaniske kontakter og reléspoler
+
+| B
+| Lite støygenererende, lite støyfølsomme, 0,5 – 50 V, lavfrekvens
+| * Telefonkabler +
+  * Signalkabler +
+  * Synkronkretser (60 – 400Hz) +
+  (PLS kabler DI/DO/AI/AO)
+
+| C
+| Støyfølsomme, støygenererende +
+ 0,5 – 5V, 50 W + 
+0,1 – 24V + 
+DC, høyfrekvens +
+| * Videosignaler +
+  * Datatransmisjon
+
+| D
+| Svært støyfølsomme +
+* 10 mV – 100 mV +
+* 50 W – 2000 W +
+* DC, lav-til superhøyfrekven +
+| *Mottakerantenner +
+ * Hydrofon og mikrofonkabler +
+ * Analoge måleverdier
+
+| E
+| Svært støygenererende +
+Lav- til superhøy frekvens
+| * Radio-sender +
+  * Sonarsignaler +
+  *Radar-moduler
+
+|=== 
+
+Når det brukes uskjermede parallelle kabler på kabelstiger og lignende skal de ha følgende minimumsavstand: 
+
+
+.Minimumsavstander i meter mellom uskjermede kabler ved parallellføring over minst 2 meter.
+|=== 
+| Kabelklasse | A | B | C | D | E
+
+| A         | 0     | 0,25  | 0,25  | 0,5 | 0,25
+| B         | 0,25  | 0     | 0,25  | 0,25| 0,25
+| C         | 0,25  | 0,25  | 0,25  | 0,25| 0,5
+| D         | 0,5   | 0,25  | 0,25  | 0   | 0,5
+| E         | 0,25  | 0,25  | 0,5   | 0,5 | 0
+
+|=== 
+
+
+Fra et støymessig synspunkt vil det være gunstig å overalt bruke kabler med skjerm som jordes.
+
+.Minimumsavstander mellom skjermede og jordete kabler i ulike kabelklasser med både parallellføring og kryssin
+|===
+| Kabelklasse | A+B | C+D | E
+
+| A + B       | 0   | 0,1 | 0,25
+| C + D       | 0,1 | 0   | 0,5
+| E           | 0,25| 0,25| 0
+|===
+
+**SE NEK 700**
+
+.Figur: Adskillelse av kabler i et kabelforlegningssystem
+image::standard-og-teori/teori/emc-22.png[width="400"]
+Kabler bør monteres enten direkte mot ledende skrog, på kabelstiger, eller på broer med bunn av minst 1,5 med mer perforert stålplate. Best skjerming oppnår når kablene forlegges mot vegg i kabelbroer.
+
+=== EMC-forhold på føringsveier
+Under følger en del eksempler på god og dårlig installasjonspraksis som følge av konfigureringen på føringsveiene.
+
+* Kabelføringer av metall er å foretrekke på grunn av vesentlig bedre skjermings- egenskaper. En kabelføring skal bestå av en sammenhengende, godt ledende metallstruktur over hele lengden. Ulike metallmaterialer i direkte kontakt bør unngås på grunn av korrosjonsfare (f.eks aluminium mot stål).
+* Lukkede kabelføringer av metall vil gi den beste skjermingseffekten. Med hull eller slisser i føringene vil små hull ha liten betydning. Slisser parallell med lengdeaksen - med kablene i en viss avstand - er bedre enn slisser på tvers.
+
+.Eksempler på kabelkanaler
+image::standard-og-teori/teori/emc-29.png[width="400"]
+
+image::standard-og-teori/teori/emc-36.png[width="400"]
+* Strålingen fra kabelen til en frekvensomformer vil bli sterkt redusert dersom den er forlagt i et metalrør eller bedre en kanal som er jordet i megge ender. 
+
+For U-profiler avtar det magnetiske feltet mot de innvendige hjørnene. På grunn av dette er dype profiler å foretrekke.
+
+.Svekking av magnetfelt i kabelkanaler
+image::standard-og-teori/teori/emc-30.png[width="400"]
+
+Kabler av ulike kategorier skal ikke blandes sammen. Fortrinnsvis skal kablene separeres med skillevegg av metall (i sammenhengende elektrisk kontakt med føringsbanen), eller aller helst legges i separate føringer
+
+image::standard-og-teori/teori/emc-31.png[width="400"]
+
+Dersom føringen av metall er bygd opp av flere korte elementer, bør elektrisk kontinuitet, dvs. lavohmig kontakt, sikres ved korrekt skjøting av elementene. 
+Tilsvarende vil et maskenett med 10 cm åpninger redusere skjermeffektiviteten med en faktor på 10 fra og med noen få MHz. 
+Sveising av hele omkretsen gir best resultat.
+Klinkede eller skrudde forbindelser er akseptabelt så lenge overflaten av føringsdelene er godt ledende og samtidig beskyttet mot korrosjon.
+
+image::standard-og-teori/teori/emc-32.png[width="400"]
+
+* Bærende elementer i en bygning kan bidra til gode EMC løsninger. Stålbjelker med L, H, U eller T profil danner ofte en sammenhengende jordstruktur. 
+Det er ofte en fordel å forlegge kabel i eller mot slike bjelker, fortrinnsvis i innvendige hjørner.
+* Kabelføringer av metall skal alltid forbindes til lokal jord i begge ender. Når lengden blir svært stor, bør føringene jordes flere steder, helst med irregulære lengdeintervall. 
+Jordforbindelsene skal være korte.
+* Dersom det legges lokk over metallbaner, skal lokket ha mange kontaktpunkter mot banen langs lengden.
+Dersom dette ikke er mulig, bør lokket forbindes elektrisk mot banen i begge ender ved hjelp av flettede kopper bånd/strapper.
+* Dersom kabelføringene må avbrytes, f eks ved brannskiller, skal føringene på begge sider av skillet forbindes med lavohmige forbindelse.
+
+
+=== Skjerming på kabler
+Når man vurderer mulige typer av interferens og relevante mottiltak, er det tydelig at kabelskjermingen og skjermforbindelsen spiller en viktig rolle. 
+Kabelskjermer er ofte laget av ikke-magnetiske materialer som kobber eller aluminium. Jern eller stål brukes sjelden; i spesielle tilfeller brukes MuMetal.
+Skjermene som vanligvis brukes for linjer og kabler er enkeltflettede skjermer som er konstruert av to sett med ledninger som går i motsatte retninger og er vevd sammen. Tettheten og tykkelsen på fletten er kvalitetsegenskapene til skjermen.
+Det er avgjørende å dekke så mye som mulig av lederoverflaten som skal beskyttes med skjermen for å forhindre interferens.
+En optisk skjermdekning under 75 % anses som utilstrekkelig. 
+En minimum skjermdekning på 85 % bør overholdes, spesielt i høyfrekvensområder. 
+Ved svært kritiske applikasjoner kan ulike skjermingskonsepter kombineres. For eksempel brukes ofte flettede og folieskjermer sammen for kabler med en overføringsfrekvens på oppover 500 MHz. +
+
+(Benyttes blant annet på CAT7 kabler)
+
+image::standard-og-teori/teori/emc-09.jpg[width="300" float="left"]
+Hvilken type skjermforbindelse som brukes avhenger hovedsakelig på typen interferens som kan være forventet. 
+
+PS: Dersom kabelen er lang (mer enn 50 til 100 m) mister EMC-skjermen sin effekt.
+
+[arabic]
+. Skjerm jordet ene enden. Denne metoden minsker støy fra elektriske felt (spenning fra nære kabler) fra nære spenningsfelt, men ikke støy forårsaket av et magnetisk felt. Dette fjernes bare når skjermen er tilkoblet i begge ender.
+
+. Skjerm koblet i begge ender. Dette skapet en jordsløyfe, og bringer med seg tilhørende velkjente ulemper. Man får galvanisk interferenser langs referansepotensialet, som påvirker det nyttige signalet, og redusere skjermingeffekten. 
+
+. Skjerm tilkoblet i begge ender med en kapasitans mellom skjerm og jord. Dette motvirker jordstrømmen for direkte og lav frekvente strømmer og sikrer at ikke uønsket strøm går skjerm.  
+
+. Her benytter vi ledninger med dobbel skjerming, og den indre skjermen er jordet i den ene enden, og den ytre skjermen er koblet i begge. Dette er den beste metoden.
+
+==== Typer skjerm
+I prinsippet er det fire forskjellige typer skjerming for strøm- og styrekabler. Tre av disse skjermingstypene er spesielt egnet for bruk med EMC -beskyttelse:
+
+===== Flettet kobberskjerm
+En vanlig metode for skjerming av kabler er flettet kobberskjerm mellom leder og kappe. Med en optisk dekning som er tilfredsstillende for applikasjonen danner fletten av fortinnet kobbertråd en effektiv barriere mot elektromagnetiske felt.
+
+Flettede kobberskjermer kan flettes på forskjellige måter, en av de avgjørende parameterne er flettingsvinkelen. I svært fleksible applikasjoner, for eksempel når kabelen skal installeres i et kabelkjede, legges kobbertråden i en brattere vinkel rundt lederne, slik at den danner en fullstendig 360-graders rotasjon over en kortere slaglengde rundt lederne. For robotkabler som må tåle millioner av vendinger, er fletting ikke ideelt fordi de kan låse seg ved vridning og risikerer å forringe flettingen over tid.
+
+===== Spunnet fortinnet kobbertråd 
+For bevegelige kabler i robotikk der skjermen må tåle vridning, brukes ofte en vikling av fortinnet kobbertråd. Siden tvinnede kobberledere er arrangert parallelt, er det ingen problemer med vridning av kabelen. Imidlertid er beskyttelsen mot elektromagnetisk interferens ofte dårligere, fordi beskyttelsestrådene ikke overlapper hverandre. 
+
+===== Plastlaminert aluminiumsfolie 
+Individuelle ledere eller alle ledere i kabelen kan omvikles med plastlaminert aluminiumsfolie. Folieskjermen beskytter kablene, spesielt ved høyere frekvenser. 
+
+==== Kabel uten skjerm ubalansert i ujordet metallhus
+Signalgiver montert ubalansert i ujordet metallhus. Tvinnet parkabal.
+
+image::standard-og-teori/teori/emc-44.png[width="300"]
+
+|===
+| Kobling fra | Virkning
+
+|Lavfrekvent H-felt. 
+| Strømsløyfe mot jord uklart definert, men det kan koples betydelig fellesmodus (CM) spenning til apparat 1.
+
+| Lavfrekvent E-felt
+| Stor fellesmodus (CM) spenning innkoples til forsterkerinngangen. Kan også oppstå differensiell (DM) støyspenning.
+
+| Høyfrekvent EM-felt
+| Stor innkobling ved at kabelen fungerer som piskantenne for E-felt- komponenten. Filtrering kan innføres i apparatenes kabelinntak
+
+| Energirike transienter
+| Ingen beskyttelse av forsterkeren i apparat 1.
+
+|===
+
+==== Kabel uten skjerm balansert i ujordet metallhus
+Signalgiver montert balansert i ujordet metallhus. Tvinnet parkabel
+
+image::standard-og-teori/teori/emc-45.png[width="300"]
+
+
+==== EMC-skjerm potensialutjevnes i èn ende
+
+* Induserte høyfrekvente støystrømmer indusert utenfra flyter på grunn av strømfortrengningen på skjermens ytterside (folie), og påvirker ikke feltet innenfor skjermen (Faraday’s ”bur”).
+* Ved flettet skjerm blir ikke denne adskillelsen like effektiv ved høyfrekvente støystrømmer.
+* Støystrømmen (HF) kan gi spenningsforskjell langs skjermen og vi kan få en antennevirkning.
+
+.Figur: Koaksialkabel potensialutjevnes til kasse i senderenden (grønn strek), men ikke i mottakerenden.
+image::standard-og-teori/teori/emc-23.png[width="300"]
+
+.Figur: Krets for fellesmodus (CCMR) med skjerm
+image::standard-og-teori/teori/emc-24.png[width="300"]
+
+Sirkulerende fellesmodus-strømmer (IC) i en kabel fins i kabelens signalledere og kabelskjerm. Strømmene setter opp et spenningsfall over jordingen med impedansen Z.
+Dersom vekselstøystrømmen går i kabelskjermen, **vil skjermen virke som en effektiv antenne**. Dette til tross for at skjermen som regel er ment å skulle begrense utstrålingen.
+Støyarealet, mellom EMC-skjerm og jordplanet, kan minimaliseres ved å legge kabelen så nær apparatskapets metallflater som mulig.
+
+Hovedsaklig kan vi si at jording i 1 ende gir beskyttelse mot støy i lave frekvenser. 
+
+==== EMC-skjerm potensialutjevnes i begge ender
+**Hovedregelen er at en kabelskjerm skal potensialutjevnes i begge ender for at skjermen skal være effektiv.** Dette gir også skjerming mot magnetisk felt.
+
+Potensialutjevning i begge ender gir null potensialforskjell mellom kabel og jordplan. 
+Hovedsaklig kan vi si at potensialutjevning i begge ender gir beskyttelse mot støy i høye frekvenser. 
+
+.Kabelskjerm jordet i begge ender (grønn). B = Støyende magnetfelt. AE = Jordsløyfeareal (lysegul), AR = Restsløyfeareal (lyseblå) Det er viktig å holde dette arealet så lite om mulig. S = EMC- skjerm.
+image::standard-og-teori/teori/emc-25.png[width="300"]
+
+==== EMC-skjerm med kombi-potensialutjevning
+Dersom vi potensialutjevner den ene enden av EMC-skjermen direkte (ved sender), og kapasitivt ved bruk av kondensator i den andre enden (ved mottaker), oppnår vi fordelene ved både enkel og dobbel potensialutjevning.
+Ved lave støyfrekvenser fungerer denne kombi-løsningen tilnærmet som enkelpotensialutjevnet skjerm med god kapasitiv skjerming.
+Ved høye støyfrekvenser virker denne kombi-løsningen som dobbelt-potensialutjevnet EMC-skjerm med god elektromagnetisk skjerming, men uten problemene med jordpotensialforskjeller.
+
+.Signalgiver usymmetrisk montert i potensialutjevnet metallkabinett. Koaksialkabel galvanisk potensialutjevnet i senderenden, potensialutjevnet via kondensator i mottakerenden.
+image::standard-og-teori/teori/emc-26.png[width="300"]
+
+==== Dobbelskjermet kabel 
+* Indre EMC-skjerm potensialutjevnes i samme ende som signalkretsen.
+* Ytre EMC-skjerm potensialutjevnes i begge ender, eventuelt med ”mellom”-
+potensialutjevning.
+
+.Signalgiver usymmetrisk montert i potensialutjevnet metallkasse. Dobbelskjermet koaksialkabel (Triax) med ytterskjerm potensialutjevnet i begge ender.
+image::standard-og-teori/teori/emc-27.png[width="300"]
+
+==== "Twisted pair" signalledere
+Tvunne signaledere er meget vanlige ved datakommunikasjon fordi et «Twisted pair» gir god immunitet mot elektrisk støy indusert utenfra.
+
+Da elektronikken kun bruker differansen mellom lederne, får støyen ingen innflytelse ved mottageren.
+
+.Eksempler på innflytelse av 50 Hz-forstyrrelse i jordplanet.
+image::standard-og-teori/teori/emc-28.png[width="300"]
+
+Delfigur b) til og med delfigur i) viser graden av redusert innflytelse av støy i forhold til a). Delfigur d) har 20 tørn per meter, mens delfigur i) har 60 tørn per meter.
+
+==== Effekten av skjerming 
+Følgende eksempel viser effektiviteten til tiltak som er ment å beskytte mot forstyrrelser. Det illustrerte arrangementet er utsatt for et vekslende magnetfelt med 50 kHz over en lengde
+på 2 m.
+
+image::standard-og-teori/teori/emc-10.png[width="300"]
+Interferensspenningen målt på utgangen er spesifisert i forhold til interferensspenningen når lederskjermen ikke er tilkoblet 0 dB i støyreduksjon.
+
+image::standard-og-teori/teori/emc-11.png[width="300"]
+Når en skjerm er koblet til i den ene enden, er det ingen forbedring da det ikke er effektivt mot magnetisk interferens. 0 dB i støyreduksjon. 
+
+image::standard-og-teori/teori/emc-12.png[width="300"]
+Når et skjerm er koblet til i begge ender, dempes interferensfeltet med ca. 25 dB. 
+
+image::standard-og-teori/teori/emc-13.png[width="300"]
+Selv uten skjerming er den tvunnede kabelen (20 vridninger per meter) mindre utsatt for forstyrrelser (ca.10 dB) i arrangement. Dette oppnås ved den kompenserende effekten av ledersløyfene. 
+
+image::standard-og-teori/teori/emc-14.png[width="300"]
+Når skjermen er koblet til i den ene enden er det nok en gang ingen forbedring og dempingen er 10dB slik som ved kun å benytte tvunnet par. 
+
+image::standard-og-teori/teori/emc-15.png[width="300"]
+Det er først når skjermen er koblet i begge ender i arrangement at dempningen forbedres til ca. 30 dB.
+
+
+==== Lavimpedant skjermtilkobling
+.4 forskjellige måter og jorde
+image::standard-og-teori/teori/emc-01.jpg[width="300" float="left"]
+
+[arabic]
+. Bilde 1: Skjermtilkobling med jordsløyfe som kan forhindres 
+. Bilde 2: Tydelig forminskning av jordsløyfen ved å flytte uttaksklemmen 
+. Bilde 3: Korrekt oppbygging gjennom jording via monteringsskinnen 
+. Bilde 4: **Optimal jording via stjerneformet oppbygging**
+
+Kvaliteten på en skjermtilkobling gjenspeiler seg i styrken på overgangsmotstanden mellom kabelskjerm og systemjord. Med unntak av den galvaniske støypåvirkningen er alle andre typer feil på en eller annen måte utsatt for frekvenser. I den forbindelse er det ikke tilstrekkelig å kun betrakte den rent ohmske overgangsmotstanden. En stor rolle spille også den induktive blindmotstanden i en skjermtilkobling, som i stor grad er avhengig av strekningslengden mellom kabelskjerm og referansejord. Man snakker her om koblingsimpedans i skjermtilkoblingen, som vises som frekvensavhengig kurve. Ved å ta i bruk samleskinneholdere som etablerer kontakt direkte, oppnår man en særdeles kort tilkobling. Ved lengre samleskinner forkortes strekningen til husjord ved at man tar i bruk samleskinneholdere som etablerer kontakt direkte, og da ikke bare i endene av samleskinnene, men også fordelt over hele lengden. Hvis isolert oppbygging velges som følge av forventet støypåvirkning, kan forlenget forbindelse mellom kabelskjerm og jord som i dette tilfellet, delvis kompenseres for med tilsvarende større ledningstverrsnitt. Lavimpedante tilkoblinger er samtidig alltid også lavohmske forbindelser. Av denne grunn må det utøves tilsvarende høye krefter på de mekaniske kontaktpunktene. Bruk av overflateforedlede metalldeler bidrar også i stor grad til lavimpedante forbindelser. Det skyldes at metallene forhindrer sjiktdannelse og korrosjon også i aggressiv atmosfære.
+
+=== Jording
+image::standard-og-teori/teori/emc-17.png[width="300"]
+Det er viktig at potensialutjevning kun foregår i et ”Single-Point Entry” fra en sone til en annen. EMC- sonen er dermed elektrisk tilkoblet ett referansepunkt. Dette for å unngå sirkulerende jordstrømmer som kan skape støy.
+
+Ved EMC- potensialutjevning må vi ha for øye at koblingen svært ofte også trenger å gi en lavohmig passasje for høyfrekvente strømmer. Lav- og høyfrekvent potensialutjevning mellom de utsatte deler er den gylne regel for EMC.
+
+En uheldig utformet EMC-jording kan i verste fall føre til at EMC-problemet øker i stedet for å avta.Det kan blant annet skje når store støystrømmer som blir generert i et system, blir koblet over til et annet system via en felles jordleder.
+
+Vekselstrømsimpedansen til en (jord-)leder (Z = R + ωL) består av en ohmsk del som er lite frekvensavhengig (R), og en induktiv del som er direkte proporsjonal med frekvensen (ωL).
+Den eneste måten å redusere selvinduksjonen på er å valse ut lederen til et bredt bånd med stor overflate. 
+
+Hvis vi har erfaring for at installasjonens jordingssystem er sterkt støybefengt, kan vi høyfrekvensisolere EMC-potensialutjevningen fra installasjonens jord ved å sette inn drosler i ledningen mellom byggets jord og de lokale EMC-ekvipotensialflatene.
+
+.HF (Høy-frekvens) utjevningsforbindelse
+image::standard-og-teori/teori/emc-21.png[width="200"]
+
+=== Best praksis i tavler
+
+For å sikre EMC beskyttelse bør det benyttes tavler i stål. Dersom det er høye krav til EMC-beskyttelse kan Aluzink benyttes som gir enda bedre beskyttelse. Alle deler må ha så lav impedans mot hverandre som mulig. 
+
+Alle åpninger for kabelføring, ventilasjon, indikatorlamper, knapper og andre komponenter montert på døren kan slippe inn HF-forstyrrelser. De bør stoppes så langt det er mulig. I områder med høy grad av EMC stråling (rom med mange frekvensomformere tett) bør antall åpninger i dør begrenses til minst mulig. 
+
+. Det bør alltid benyttes HF jordinger mot dører og andre paneler i tavlen. En vanlig kabel kan aldri erstatte en HF jording. 
+. Strømforsyninger bør monteres så nær inntakskablen som mulig for å unngå en lang ende på "forstyrret inntakskabel"
+. Dersom inntakskabel er jordet og over 1m bør skjermen jordes i inntak og ved filter/strømforsyningsenheten.
+. **Ledninger som ikke brukes i signalkabler lager i utgangspunktet en antenne. Kan motvirkes ved å jorde disse.** 
+
+==== Tavler layout
+image::standard-og-teori/teori/emc-33.png[width="500"]
+Hvis utstyr med høy og lav effekt er monter ved siden av hverandre uten å ta forholdsregler og hvis
+kabler av forskjellige slag føres i samme kabelkanaler, er det sannsynlig med alvorlige funksjonsfeil.
+Ved å ta hensyn til forhåndsreglene beskrevet nedenfor i designstadiet, vil man unngå kjedelig
+feilsøking, etterfølgende installasjon av filtre, eller til og med omarbeiding av layout og ledninger.
+
+image::standard-og-teori/teori/emc-34.png[width="500"]
+Oppbygging av forskjellige tavler etter effektklasse er det mest effektive tiltaket for å oppnå et godt "EMC" resultat. 
+Dessuten separat forlegning av forstyrrende og følsomme kabler sikrer minimum av forstyrrelser.
+
+En kabelkanal i  metall mellom tavlene sikrer potensialutjevning av panelene og effektiv ledning av LF og HF-interferens.
+
+image::standard-og-teori/teori/emc-35.png[width="500"]
+Avdeling av tavler i flere soner
+
+* Kraftfordeling
+* Styrestrøm
+
+Dette er en et rimeligere alternativ til forskjellige kabinett. En metallplate for å dele skapet vil ytterligere forbedre EMC egenskapene til hver indeling.
+
+==== Avskillelse av kabler
+image::standard-og-teori/teori/emc-37.png[width="500"]
+Eksempel på separasjon på kraft og signaldelen av tavlene. 
+
+Grupper kabelinnføringen etter
+
+* Kraftkabler 
+* Signalkabler (<100mA)
+* Kommunikasjonskabler 
+Grupper gjerne innføringen iht. <<Klasisifikasjon av kabler>>
+
+==== Kabelføring inne i tavler
+image::standard-og-teori/teori/emc-38.png[width="500"]
+
+|===
+| ^|Punkt |
+
+| Strøm og jordkablene i tavlen lager en stor loop som vist i blå. Overspenningsvernet vil lette flyten av høye strømmer  i  danner et  
+^| 1
+| Kablene er holdt adskilt for å redusere arealet av den induktive påvirkningen. 
+
+| Tilførsel og avgang til frekvensomformer går ved siden av hverandre som skaper smitte i støy
+^| 2
+| Tilførsel og avgang til frekvensomformer følger ulike retninger og krysser hverandre i 90 graders vinkel. Kraftkabel ut er skjermet og jordet mot bakplaten. 
+
+| Et tidsrelè er montert mellom to kontaktorer. Dette øker risikoen for feil på utstyret grunnet den høye spenningen kontaktorer gir ut når de slår.
+^| 3
+| Tidsrelèet er montert med tilstrekkelig avstand til kontaktorer. 
+
+|===
+
+==== Frekvensomformere
+
+Frekvensomformere vil ha mindre utstrålet støy i en tavle dersom de er "innkapslet" i en liten elektromagnetisk forseglet, umalt metallkapsling. Metallkapslingen må sikres via en lavimpedans kobling i bakplaten (jord) av tavlen. 
+
+=== Valg av nettsystem
+
+Av hensyn til generering og utbredelse av overharmoniske, har det også betydning at apparater har merkespenning 400 V isteden for 230 V.
+Dette fordi samme effekt krever lavere strøm i et 230/400V TN-S systemet enn i 230 V IT-system, og genererer dermed overharmoniske strømkomponenter med mindre amplitude.
+For enfase apparater vil merkespenningen være 230 V for begge systemer, men i TN-S systemet vil strømmene gjennom alle enfase lastobjekter summere seg vektorielt i nøytrallederen. 
+Hvis lasten er lik i alle fasene (symmetrisk), vil strømmen i nøytrallederen være tilnærmet null. Dette forutsetter at lasten ikke trekker 3-harmoniske strømkomponenter, da disse vil summeres sammen og tilbakeføres i nøytrallederen.
+
+**Det bør derfor velges TN-S system dersom mulig.**
+
+== Tl;DR
+[arabic]
+. Skjerm alle ledere. Ledninger som kommer fra omgivelsene og som ikke er jordet tilsvarende, vil ødelegge skjermingskonseptet. Skjerm skal tilkobles i begge ender.
+. Automasjonskapets komplette metallhus trenger et fagmessig, lavohmsk jordingskonsept (monteringsskinner, monteringsplater, automasjonskapdør med mer).
+. Ikke rull opp for lange kabler i skapet. Dette forårsaker en spole og demed økt ømfintlighet mot støystråling. Beste mottiltak: Forkorte ledningene.
+. Legg skjermingen av kabler nærmest mulig kabelinnføringen.
+. Unngå pigtail. Ved å tvinne skjermflettverket oppstår en ytterligere antenne, noe som motvirker den egentlige skjermingen.
+. Benytt heldekkende kabelbroer dersom mulig i metall
+. Avskjerm komponenter i egne tavler, eller skjerm støyende komponenter i tavler med metall
+. Ledninger som ikke brukes i signalkabler lager i utgangspunktet en antenne. Kan motvirkes ved å jorde disse.
+. Skill kabler på egne kabelbroer og egne kabelinnføringer i tavler av ulik klasse.
+. Sørg for single point jord fra skjerm jord til jordskinne. 
+
+
+== Nordkontakt praksis
+
+. EMC-tilkobling via Elpro link:../../brukermanualer/EMC/emc_skinne.adoc[EMC-jordskinne]
+. EMC-tillkobling via jordklemmer
+. EMC-tilkobling via eks. https://www.phoenixcontact.com/no-no/teknologier/skjerming/skjermtilkobling-i-automasjonskapet[Phoenix-contact klemmer]
+. EMC-tilkobling via eks. Icotek EMC gjennomføringer
+. EMC-tilkobling for https://www.icotek.com/en/products/emc-cable-shield-clamps/stfz[IO-kort]
+. EMC-tilkobling via https://www.icotek.com/en/products/emc-cable-shield-clamps/kafm[DIN skinne montert holdere].
+
+. <<Pigtail>> skal ikke benyttes 
+
+== Pigtail
+image::standard-og-teori/teori/emc-02.jpg[width="300"]
+
+Pigtail støtter ikke EMC-kompatibel kabling. Ved denne skjermoppbyggingen tvinnes kabelskjermen til en ytterligere tråd, og tilkobles jord eller utstyrsskjermingen. Utfordringen ved denne metoden er at det, som følge av det tvunnede skjermflettverket, oppstår en ytterligere antenne, som motvirker den egentlige hensikten ved skjermingen.
+
+== Kjente problemer
+
+=== Humming / jordstrøm i skjerm
+Dersom man benytter 360 graders jording og opplever feilstrømmer / lavfrekvens støy (humming) mellom utstyr er det i hovedsak følgende anbefalinger: 
+ 
+. Bytt utstyret i utstyr som ikke sender jordfeilstrømmer i skjerm. 
+. Sett inn galvanisk skille/fiberoptisk utstyr/isolasjonstransformator mellom utstyr
+. Legg en ekstra lav ohm jordleder mellom utstyret så nært kabel som mulig. 
+. Montasje av kondensator på 360 graders jordingen i den ene enden. Kondensatoren må tunes mot frekvensen man er plaget med.
+
+=== Lange kabelstrekk med høy frekvens
+Dersom bølgelenden er lengere enn 6 ganger kabellengden (10m kabel på 3+MHz), kan man oppleve at det flyter en strøm i skjerm uavhengig av om den er koblet til jord i ingen ende, en ende, eller begge ender. Dette grunnet de kapasitive virkningene på kabelen mot skjerm. Det kan derfor ikke være nok å koble skjerm til jord i begge ender. Det kan derfor være nødvendig og koble kabelskjermen mot referansejord en eller flere ganger langs lengden av kabelen. 
+
+https://www.emcstandards.co.uk/files/terminating_cable_screens_emcj_issue_82_may_2009_2.pdf[Kabelskjerming]
+
+=== Vanlige feil i tavle/utstyr
+.Eksempler på gal EMC
+image::standard-og-teori/teori/emc-18.png[width="400"]
+
+. Uskjermet kabel trekkes inn i EMC-sone (kan ødelegge for øvrige beskyttelsestiltak)
+. Mer enn ett jordingspunkt (skulle vært jordet ved SPE (Single Point Entry))
+. Kobling (kapasitiv/induktiv) fra en uskjermet kabel til en ”beskyttet” kabel
+. Kabelskjerm skulle vært jordet nær ved SPE-jord
+. Elektronikkjord (inkludert PE) skulle vært tilkoblet til SPE-jord kun i ett punkt (for å hindre spenningsfall). Stiplet linje indikerer rett jording.
+. Beskyttelse installert på gal side.
+
+== Relevante normer
+
+The International Electrotechnical Commision (IEC) er den internasjonale standardiserings-organisasjonen som har størst fokus på EMC. 
+
+To tekniske komitéer i IEC arbeider full tid med EMC: TC77 – Electromagnetic compatibility between equipment including networks, og CISPR  - The International Special Comitee on Radio Interference. 
+
+De frittstående europeiske standardiseringsorganisasjonene CENELEC (Comite European de Normalisation Electrotechnique) og ETSI (European Telecommunication Standard Institute) utarbeider europanormer etter mandat fra europakommisjonen og EFTA. En stor del av de utgitte europanormene fra CENELEC er identiske med IEC- eller CISPR-normer. Det femsifrede nummeret på normen angir opprinnelsen. Europanormer som CENELEC selv utarbeider, nummereres fortløpende fra EN 50001. EN 6XXXX er den europeiske ekvivalente nummereringen av IEC standarder med nummer IEC 6XXXX. **Tilsvarende blir 55000 lagt til gjeldende CISPR-publikasjons-nummer (eks. CISPR 14 => EN 55014).**
+
+Straks CENELEC har produsert og blitt enige om en europeisk EMC standard (prefiks EN- Europanorm eller HD – Harmonic Document), må alle CENELEC landene (inkludert Norge) implementere tilsvarende nasjonale standarder.
+
+ETSI genererer standarder for telekommunikasjons-nettverksutstyr som ikke er tilgjengelig for abonnenten, og for radiokommunikasjonsutstyr og kringkastingssendere.
+
+ NEK EN 50174-1:2018 - NEK 700 - Informasjonsteknologi
+
+
+== Leverandører av EMC utstyr og rådgivning
+
+https://hollandshielding.com/ + 
+https://www.jacquesdubois.com/ 
+
+== Literatur
+https://www.phoenixcontact.com/no-no/teknologier/skjerming/skjermtilkobling-i-automasjonskapet
+https://www.emcstandards.co.uk/files/terminating_cable_screens_emcj_issue_82_may_2009_2.pdf
+
+https://download.schneider-electric.com/files?p_enDocType=Technical+leaflet&p_File_Name=CPTG003_EN_%28web%29.pdf&p_Doc_Ref=CPTG003_EN 
+
+https://trv.banenor.no/PDF/Felles%20elektro/Vedlegg/T1004e00.pdf 
+
+http://tavleforeningen.no/images/tavleforeningen/fileadmin/Dokumenter/6_-_AArsmoete/AArsmoete_2013/8_a_-_Fou-Prosjekt_Nr_50087_Emc-Haandbok_For_Bygningsinstallasjoner.pdf 
+
+https://no.lappgroup.com/produkter/produkter-etter-egenskaper/skjermet-kabel-emc.html 
+
+https://www.uio.no/studier/emner/matnat/ifi/INF5460/v08/undervisningsmateriale/F2-3-08.pdf 
+
+https://nfogm.no/wp-content/uploads/2014/02/NFOGM-EMC-artikkel-nr-1.pdf 

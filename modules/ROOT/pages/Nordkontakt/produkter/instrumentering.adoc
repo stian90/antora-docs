@@ -1,0 +1,59 @@
+== instrumentering
+
+Tabell over leverandører og ulike typer sensorikk
+
+[cols="2,2"]
+|===
+|**Instrument**
+|**Leverandør**
+
+|Oksygen            |Sentec +
+                     Tormatic +
+                     Aandera +
+
+| Temperatur       | Aplisens +
+                     IFM
+                  
+
+| Veieceller
+| http://www.eilersen.dk/ (Tormatic) +
+
+|=== 
+
+=== Tabell over leverandører 
+
+[%hardbreaks]
+[cols="2,2"]
+|===
+|**Leverandør** |**Instrumenter**
+
+| Instrument companiet  | Handholdte instrumenter i alle typer
+
+| Burkert               | * Trykksensorer +
+                          * Nivå +
+                          * Temperatur +
+                          * Flowmålere +
+                          * Væskeanalyse +
+                            - PH/ORP +
+                            - Konduktivitet
+                            - Turbiditet
+
+| **IFM**               | * Trykk +
+                          * Nivå +
+                          * Strømningssensor +
+                          * Temperatursensor +
+                          * Analytiske sensorer +
+                          * Posisjonssensorer ++ +
+                          * Sensor for bevegelseskontroll +
+
+| Pemac                 | * Vannanalyse +
+                          * Gassanalyse +
+                          * Fuktmåling + 
+                          * Mengdemåling + 
+                          * Luftkvalitet  / partikler +
+                          * Papir og masse
+
+
+
+
+|=== 

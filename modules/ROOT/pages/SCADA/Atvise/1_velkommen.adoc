@@ -1,0 +1,18 @@
+== header
+
+content
+
+=== Installasjon 
+
+Litt om installasjon her
+
+=== Lisenser
+
+Info om kjøp og registrering av lisenser her
+
+IMPORTANT: Andreas skal ha beskjed om alle lisenser
+
+link:/Atvise/1_velkommen[1_velkommen]
+
+include::1_velkommen.adoc[]
+
